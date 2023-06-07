@@ -1,0 +1,9 @@
+.wrapInput {
+    /* White */
+    background: #FFFFFF;
+
+    /* Outline/Border */
+    border-radius: 6px;
+    padding: 13px 16px;
+    min-height: 48px;
+}
