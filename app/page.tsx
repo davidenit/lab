@@ -5,7 +5,7 @@ import {
   Layout,
   Select,
   Space,
-  Typography
+  Typography,
 } from "antd";
 import "antd/dist/reset.css";
 import Sider from "antd/es/layout/Sider";
@@ -16,7 +16,7 @@ import { Input } from "./components/Input";
 import { TextArea } from "./components/TextArea";
 
 import COLORS from "./assets/theme/colors";
-import "./assets/theme/global.css";
+import "./global.css";
 import { DatePicker } from "./components/DatePicker";
 import RadioCpn from "./components/Radio/Radio";
 
@@ -62,6 +62,12 @@ export default function Home() {
           colorBorder: COLORS.colorBorder,
           colorPrimaryHover: COLORS.colorPrimaryHover,
           colorTextPlaceholder: COLORS.colorTextPlaceholder,
+          colorSuccess: COLORS.colorSuccess,
+          colorWarning: COLORS.colorWarning,
+          colorTextDisabled: COLORS.colorTextDisabled,
+          colorError: COLORS.colorError,
+          colorLink: COLORS.colorLink,
+          fontFamily: 'Brandon',
         },
       }}
     >
