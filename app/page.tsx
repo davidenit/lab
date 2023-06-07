@@ -11,5 +11,5 @@ const headerStyle: React.CSSProperties = {
 };
 
 export default function Home() {
-  return <div>tesst lab</div>;
+  return <div className="tw-text-primary">tesst lab</div>;
 }
