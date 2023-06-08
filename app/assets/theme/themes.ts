@@ -7,5 +7,18 @@ export const darkTheme = createTheme({
     primary: {
       main: COLORS.colorPrimary,
     },
+    text: {
+      primary: COLORS.colorText,
+      disabled: COLORS.colorTextDisabled,
+    },
+    success: {
+      main: COLORS.colorSuccess,
+    },
+    warning: {
+      main: COLORS.colorWarning,
+    },
+    error: {
+      main: COLORS.colorError,
+    },
   },
 });
