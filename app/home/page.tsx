@@ -1,6 +1,5 @@
-
-import { Suspense } from "react";
-import Loading from "./loading";
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const HomePage = () => {
   return (
