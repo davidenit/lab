@@ -1,10 +1,10 @@
-"use client";
-import { Spin } from "antd";
+
 import { Suspense } from "react";
+import Loading from "./loading";
 
 const HomePage = () => {
   return (
-    <Suspense fallback={<Spin />}>
+    <Suspense fallback={<Loading />}>
       <div>This is the Homepage</div>
     </Suspense>
   );
