@@ -1,174 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
-    font-family: 'BrandonLight';
-    src: local('Brandon_light'), url('/fonts/Brandon_Grotesque/Brandon_light.otf') format('truetype');
+	font-family: "BrandonLight";
+	src: local("Brandon_light"),
+		url("/fonts/Brandon_Grotesque/Brandon_light.otf") format("truetype");
 }
 
 @font-face {
-    font-family: 'Brandon';
-    src: local('Brandon_reg'), url('/fonts/Brandon_Grotesque/Brandon_reg.otf') format('truetype');
+	font-family: "Brandon";
+	src: local("Brandon_reg"),
+		url("/fonts/Brandon_Grotesque/Brandon_reg.otf") format("truetype");
 }
 
 body,
 html {
-    font-family: 'Brandon', sans-serif;
+	font-family: "Brandon", sans-serif;
 }
 
 :root {
-    --colorPrimary: #E03155;
-    --colorText: #191817;
-    --colorBorder: #A4A4A4;
-    --colorPrimaryHover: #375EAB;
-    --colorTextPlaceholder: #7E7E7E;
-    --colorSuccess: #2DB763;
-    --colorWarning: #F47D23;
-    --colorTextDisabled: #B1B1B1;
-    --colorError: #E03155;
-    --colorTagBg: #F3CCC5;
-    --colorBgDefault: #F5F4F3;
-    --colorLink: #375EAB;
+	--colorPrimary: #e03155;
+	--colorText: #191817;
+	--colorBorder: #a4a4a4;
+	--colorPrimaryHover: #375eab;
+	--colorTextPlaceholder: #7e7e7e;
+	--colorSuccess: #2db763;
+	--colorWarning: #f47d23;
+	--colorTextDisabled: #b1b1b1;
+	--colorError: #e03155;
+	--colorTagBg: #f3ccc5;
+	--colorBgDefault: #f5f4f3;
+	--colorLink: #375eab;
 }
 
 .ant-select-selector {
-    height: 48px !important;
-    border-radius: 6px !important;
+	height: 48px !important;
+	border-radius: 6px !important;
 
-    /* Auto layout */
-    flex-direction: row;
-    align-items: center;
-    padding: 13px 16px !important;
+	/* Auto layout */
+	flex-direction: row;
+	align-items: center;
+	padding: 13px 16px !important;
 }
 
 ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    opacity: 1;
-    /* Firefox */
-    font-style: normal;
-    font-weight: 330;
-    font-size: 14px;
-    line-height: 120% !important;
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	opacity: 1;
+	/* Firefox */
+	font-style: normal;
+	font-weight: 330;
+	font-size: 14px;
+	line-height: 120% !important;
 }
 
 :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    font-style: normal;
-    font-weight: 330;
-    font-size: 14px;
-    line-height: 120% !important;
+	/* Internet Explorer 10-11 */
+	font-style: normal;
+	font-weight: 330;
+	font-size: 14px;
+	line-height: 120% !important;
 }
 
 ::-ms-input-placeholder {
-    /* Microsoft Edge */
-    font-style: normal;
-    font-weight: 330;
-    font-size: 14px;
-    line-height: 120% !important;
+	/* Microsoft Edge */
+	font-style: normal;
+	font-weight: 330;
+	font-size: 14px;
+	line-height: 120% !important;
 }
 
 .heading1 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.5rem; /*40px*/
-    line-height: 120%;
-    /* identical to box height, or 40px */
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2.5rem; /*40px*/
+	line-height: 120%;
+	/* identical to box height, or 40px */
 
-    letter-spacing: 0.02em;
+	letter-spacing: 0.02em;
 }
 
 .heading2 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2rem; /*32px*/
-    line-height: 120%;
-    /* identical to box height, or 48px */
+	font-style: normal;
+	font-weight: 400;
+	font-size: 2rem; /*32px*/
+	line-height: 120%;
+	/* identical to box height, or 48px */
 
-    letter-spacing: 0.02em;
+	letter-spacing: 0.02em;
 }
 
 .body1 {
-    font-style: normal;
-    font-weight: 390;
-    font-size: 1.25rem; /*20px*/
-    line-height: 120%;
-    /* identical to box height, or 48px */
+	font-style: normal;
+	font-weight: 390;
+	font-size: 1.25rem; /*20px*/
+	line-height: 120%;
+	/* identical to box height, or 48px */
 
-    letter-spacing: 0.02em;
+	letter-spacing: 0.02em;
 }
 
 .body2 {
-    font-style: normal;
-    font-weight: 390;
-    font-size: 1.125rem; /*18px*/
-    line-height: 120%;
-    /* identical to box height, or 48px */
+	font-style: normal;
+	font-weight: 390;
+	font-size: 1.125rem; /*18px*/
+	line-height: 120%;
+	/* identical to box height, or 48px */
 
-    letter-spacing: 0.02em;
+	letter-spacing: 0.02em;
 }
 
 .text {
-    font-style: normal;
-    font-weight: 330;
-    font-size: 1rem; /*16px*/
-    line-height: 120%;
-    /* identical to box height, or 48px */
+	font-style: normal;
+	font-weight: 330;
+	font-size: 1rem; /*16px*/
+	line-height: 120%;
+	/* identical to box height, or 48px */
 
-    letter-spacing: 0.02em;
+	letter-spacing: 0.02em;
 }
 
 .notification {
-    font-style: normal;
-    font-weight: 330;
-    font-size: 0.875rem; /*14px*/
-    line-height: 120%;
-    /* identical to box height, or 48px */
+	font-style: normal;
+	font-weight: 330;
+	font-size: 0.875rem; /*14px*/
+	line-height: 120%;
+	/* identical to box height, or 48px */
 
-    letter-spacing: 0.02em;
+	letter-spacing: 0.02em;
 }
 
 @media screen and (max-width: 480px) {
-    .heading1 {
-        font-size: 1.75rem; /*28px*/
-    }
+	.heading1 {
+		font-size: 1.75rem; /*28px*/
+	}
 
-    .heading2 {
-        font-size: 1.5rem; /*24px*/
-    }
+	.heading2 {
+		font-size: 1.5rem; /*24px*/
+	}
 
-    .body1 {
-        font-size: 1rem; /*16px*/
-    }
+	.body1 {
+		font-size: 1rem; /*16px*/
+	}
 
-    .body2 {
-        font-size: 0.875rem; /*14px*/
-    }
+	.body2 {
+		font-size: 0.875rem; /*14px*/
+	}
 
-    .notification {
-        font-size: 0.75rem; /*12px*/
-    }
+	.notification {
+		font-size: 0.75rem; /*12px*/
+	}
 }
 
 /* Custom current DatePicker --START */
-.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner {
-    color: var(--colorPrimary);
+.ant-picker-dropdown
+	.ant-picker-cell-in-view.ant-picker-cell-today
+	.ant-picker-cell-inner {
+	color: var(--colorPrimary);
 }
 
-.ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-today.ant-picker-cell-selected .ant-picker-cell-inner {
-    color: white;
+.ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-today.ant-picker-cell-selected
+	.ant-picker-cell-inner {
+	color: white;
 }
 
-.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
-    border: 0 !important;
+.ant-picker-dropdown
+	.ant-picker-cell-in-view.ant-picker-cell-today
+	.ant-picker-cell-inner::before {
+	border: 0 !important;
 }
 
 /* Custom current DatePicker --END */
 
 /* Override radio customize --START */
 label.ant-radio-wrapper.ant-radio-wrapper-checked {
-    border-color: var(--colorPrimary);
+	border-color: var(--colorPrimary);
 }
 
 .ant-radio-wrapper .ant-radio {
-    align-self: flex-start;
-    margin-top: 4px;
+	align-self: flex-start;
+	margin-top: 4px;
 }
 
 /* Override radio customize --END */
