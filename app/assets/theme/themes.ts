@@ -2,6 +2,9 @@
 import { createTheme } from '@mui/material/styles';
 import COLORS from './colors';
 export const darkTheme = createTheme({
+  typography: {
+    fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Brandon"'].join(','),
+  },
   palette: {
     mode: 'light',
     primary: {
