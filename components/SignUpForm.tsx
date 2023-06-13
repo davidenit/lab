@@ -2,6 +2,7 @@
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Input from './Input';
+import { nameValidation } from '@/utils/form-validation';
 
 interface IFormInputs {
   firstName: string;
@@ -24,12 +25,12 @@ const SignUpForm = () => {
         <Input
           id="firstName"
           label="First Name"
-          register={register('firstName')}
+          register={register('firstName', nameValidation)}
         />
         <Input
           id="lastName"
           label="Last Name"
-          register={register('lastName')}
+          register={register('lastName', nameValidation)}
         />
         <button type="submit">Submit</button>
       </form>

@@ -33,7 +33,8 @@
     "react-use": "^17.4.0",
     "react-youtube": "^10.1.0",
     "react-hook-form": "^7.44.3",
-    "typescript": "5.1.3"
+    "typescript": "5.1.3",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
