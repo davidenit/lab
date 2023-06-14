@@ -29,3 +29,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Group Rules
+
+Allowed <type> values: - feat: a new feature is introduced with the changes - fix: a bug fix has occurred - chore: changes that do not relate to a fix or feature and don't modify src or test files (for example updating dependencies) - refactor: refactored code that neither fixes a bug nor adds a feature - docs: updates to documentation such as a the README or other markdown files - style: changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, and so on.
