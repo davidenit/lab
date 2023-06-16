@@ -3,7 +3,7 @@ import { Box, Button, Grid } from '@mui/material';
 import Image from 'next/image';
 import Search from './assets/images/svg/Search.svg';
 import { SearchIcon } from './assets/images/svg/icons';
-
+import PriceSlider from '@/components/priceSlider';
 export default function Home() {
   return (
     <Grid
@@ -27,6 +27,7 @@ export default function Home() {
           continue as guest
         </Button>
       </Box>
+      <PriceSlider />
     </Grid>
   );
 }
