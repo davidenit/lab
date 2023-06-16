@@ -1,7 +1,7 @@
 'use-client';
 
 import React, { useState } from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import styles from './ShippingMethods.module.css';
 
 const data = [
