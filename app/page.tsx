@@ -14,7 +14,7 @@ export default function Home() {
       justifyContent="center"
       direction="column"
     >
-      {/* <h1>Using Material UI with Next.js 13 and Tailwind</h1>
+      <h1>Using Material UI with Next.js 13 and Tailwind</h1>
       <Box>
         <Image src={Search} alt="Search" height={24} width={24} />
         <SearchIcon fontSize={24} />
@@ -27,7 +27,7 @@ export default function Home() {
         <Button variant="outlined" size="large" className="tw-uppercase">
           continue as guest
         </Button>
-      </Box> */}
+      </Box>
       <PriceSlider />
       <ProductContainer />
     </Grid>

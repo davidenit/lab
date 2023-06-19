@@ -1,18 +1,15 @@
-import { FC } from 'react';
-import React, { useState } from 'react';
-import { Button, Paper, Box, Typography, Icon } from '@mui/material';
-import Slider from '@mui/material/Slider';
+import React, { FC } from 'react';
+import { Button, Box, Typography } from '@mui/material';
 import styles from './styles.module.css';
 import {
   WishlistUnactiveIcon,
-  WishlistIcon,
-  //   WishlistOutlineIcon,
   WishlistActiveIcon,
   DocumentSearchIcon,
   PlusIcon,
 } from '@/app/assets/images/svg/icons';
 import Image from 'next/image';
 import Product from '@/app/assets/images/svg/Product.png';
+import clsx from 'clsx';
 interface productContainerProps {}
 
 const productContainer: FC<productContainerProps> = ({}) => {
@@ -43,13 +40,13 @@ const productContainer: FC<productContainerProps> = ({}) => {
       <Box className="tw-flex tw-justify-between tw-mt-2 tw-mx-4">
         <Typography className="tw-m-0 tw-text-sm">Talam Ubi</Typography>
         <DocumentSearchIcon
-          className={`${styles.searchIcon} tw-cursor-pointer`}
+          className={clsx(styles.searchIcon, 'tw-cursor-pointer')}
         />
       </Box>
       <Box className="tw-flex tw-mt-[23px] tw-mx-4 ">
         <Typography className="tw-m-0 !tw-text-sm">28.80 SGD</Typography>
         <Typography
-          className="tw-m-0 tw-line-through !tw-text-[10px] !tw-ml-2 tw-content-end"
+          className="tw-m-0 tw-line-through !tw-text-[10px] !tw-ml-2 tw-self-end"
           sx={{
             color: 'var(--colorTextPlaceholder)',
           }}
@@ -58,20 +55,25 @@ const productContainer: FC<productContainerProps> = ({}) => {
         </Typography>
       </Box>
       <Box
-        className={`${styles.buttonContainer} tw-flex tw-w-full group tw-justify-center`}
+        className={clsx(
+          styles.buttonContainer,
+          'tw-flex tw-w-full group tw-justify-center'
+        )}
       >
         <Button
           variant="contained"
-          className={`${styles.button} tw-flex tw-box-border !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] tw-text-sm tw-rounded tw-self-center`}
+          className={clsx(
+            styles.button,
+            'tw-flex tw-box-border !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] tw-text-sm tw-rounded tw-self-center'
+          )}
           sx={{
-            backgroundColor: 'var(--colorPrimary)',
             width: 'calc(100% - 16px)',
             border: '2px solid var(--colorPrimary)',
             fontWeight: 450,
           }}
         >
           ADD
-          <PlusIcon className={`${styles.plusIcon} tw-stroke-[#fff]`} />
+          <PlusIcon className={clsx(styles.plusIcon, 'tw-stroke-[#fff]')} />
         </Button>
       </Box>
     </Box>

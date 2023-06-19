@@ -1,10 +1,7 @@
 'use client';
-import { FC } from 'react';
-import React, { useState } from 'react';
-import { Button, Paper, Box, Typography, Icon } from '@mui/material';
+import React, { useState, FC } from 'react';
+import { Box, Typography } from '@mui/material';
 import Slider from '@mui/material/Slider';
-import { createTheme, ThemeProvider } from '@mui/material';
-import { withStyles } from '@mui/material/styles';
 import { ChevrondownIcon } from '@/app/assets/images/svg/icons';
 interface priceSliderProps {}
 
