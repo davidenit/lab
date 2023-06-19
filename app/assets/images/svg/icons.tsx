@@ -551,7 +551,6 @@ export const PlusIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M13.992 7V14M13.992 14V21M13.992 14H20.7878M13.992 14L7.19629 14"
-        // stroke="#191817"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
