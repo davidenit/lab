@@ -65,6 +65,8 @@ const priceSlider = ({}: priceSliderProps) => {
           sx={{
             color: 'var(--colorText)',
             fontSize: '18px',
+            fontWeight: 420,
+            fontFamily: 'Brandon Grotesque',
           }}
         >
           Price Range
