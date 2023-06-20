@@ -1,18 +1,38 @@
-import React, { FC } from 'react';
+'use client';
+import React, { FC, useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
 import styles from './styles.module.css';
 import {
-  WishlistUnactiveIcon,
-  WishlistActiveIcon,
+  WishlistHeartIcon,
   DocumentSearchIcon,
   PlusIcon,
 } from '@/app/assets/images/svg/icons';
+import Modal from '@mui/material/Modal';
 import Image from 'next/image';
 import Product from '@/app/assets/images/svg/Product.png';
 import clsx from 'clsx';
-interface productContainerProps {}
+import ProductDetailModal from '@/components/ProductDetailModal';
 
-const productContainer: FC<productContainerProps> = ({}) => {
+interface productContainerProps {
+  productId?: string;
+}
+
+const ProductContainer: FC<productContainerProps> = ({ productId }) => {
+  const [active, setActive] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  // const ADD_TO_WISHLIST_MUTATION = gql`
+  //   mutation AddToWishlist($productId: ID!) {
+  //     addToWishlist(productId: $productId) {
+  //       id
+  //     }
+  //   }
+  // `;
   return (
     <Box
       className="tw-mt-5 tw-flex tw-flex-col tw-rounded-lg tw-bg-[#fff] tw-box-border tw-p-[2px] tw-relative"
@@ -28,20 +48,27 @@ const productContainer: FC<productContainerProps> = ({}) => {
         <Image src={Product} alt="Product" className="tw-h-full tw-w-full" />
       </Box>
       <Box className="tw-absolute tw-group tw-top-4 tw-right-3 tw-cursor-pointer tw-w-[24px] tw-h-[24px]">
-        <WishlistActiveIcon
-          className="group-hover:tw-flex tw-hidden"
-          fontSize={24}
-        />
-        <WishlistUnactiveIcon
-          className="group-hover:tw-hidden tw-flex"
+        <WishlistHeartIcon
+          className="group-hover:tw-stroke-primary group-hover:tw-fill-primary"
           fontSize={24}
         />
       </Box>
       <Box className="tw-flex tw-justify-between tw-mt-2 tw-mx-4">
         <Typography className="tw-m-0 tw-text-sm">Talam Ubi</Typography>
         <DocumentSearchIcon
-          className={clsx(styles.searchIcon, 'tw-cursor-pointer')}
+          onClick={handleOpen}
+          fontSize={24}
+          className="tw-cursor-pointer hover:tw-stroke-primary tw-stroke-[#7e7e7e] tw-stroke-2"
         />
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          className="tw-flex tw-items-center tw-justify-center"
+        >
+          <ProductDetailModal />
+        </Modal>
       </Box>
       <Box className="tw-flex tw-mt-[23px] tw-mx-4 ">
         <Typography className="tw-m-0 !tw-text-sm">28.80 SGD</Typography>
@@ -54,30 +81,25 @@ const productContainer: FC<productContainerProps> = ({}) => {
           32.80 SGD
         </Typography>
       </Box>
-      <Box
-        className={clsx(
-          styles.buttonContainer,
-          'tw-flex tw-w-full group tw-justify-center'
-        )}
+      <Button
+        variant="contained"
+        className="tw-flex tw-box-border tw-group !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] tw-text-sm tw-rounded tw-self-center "
+        sx={{
+          width: 'calc(100% - 16px)',
+          outline: '2px solid var(--colorPrimary)',
+          fontWeight: 450,
+          '&:hover': {
+            backgroundColor: '#fff',
+            color: 'var(--colorPrimary)',
+            boxShadow: 'none',
+          },
+        }}
       >
-        <Button
-          variant="contained"
-          className={clsx(
-            styles.button,
-            'tw-flex tw-box-border !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] tw-text-sm tw-rounded tw-self-center'
-          )}
-          sx={{
-            width: 'calc(100% - 16px)',
-            border: '2px solid var(--colorPrimary)',
-            fontWeight: 450,
-          }}
-        >
-          ADD
-          <PlusIcon className={clsx(styles.plusIcon, 'tw-stroke-[#fff]')} />
-        </Button>
-      </Box>
+        ADD
+        <PlusIcon className="tw-stroke-[#fff] group-hover:tw-stroke-primary" />
+      </Button>
     </Box>
   );
 };
 
-export default productContainer;
+export default ProductContainer;

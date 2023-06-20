@@ -5,7 +5,7 @@ import Slider from '@mui/material/Slider';
 import { ChevrondownIcon } from '@/app/assets/images/svg/icons';
 interface priceSliderProps {}
 
-const priceSlider = ({}: priceSliderProps) => {
+const PriceSlider = ({}: priceSliderProps) => {
   const [value, setValue] = useState<number[]>([10, 100]);
   const [isShowed, setIsShowed] = useState<boolean>(false);
 
@@ -114,4 +114,4 @@ const priceSlider = ({}: priceSliderProps) => {
   );
 };
 
-export default priceSlider;
+export default PriceSlider;
