@@ -4,28 +4,28 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import React from 'react';
 import styled from './CustomeNumberInput.module.css';
 export interface CustomeNumberInput {
-  unit: number;
-  setUnit: (value: number | ((prevVar: number) => number)) => void;
-  unitLabel: string;
+  value: number;
+  setValue: (value: number | ((prevVar: number) => number)) => void;
+  unit: string;
   imageUrl: string;
 }
 
 const CustomeNumberInput: React.FC<CustomeNumberInput> = ({
+  value,
+  setValue,
   unit,
-  setUnit,
-  unitLabel,
   imageUrl,
 }) => {
   const handlePlusUnit = () => {
-    setUnit((prevVar: number) => prevVar + 1);
+    setValue((prevVar: number) => prevVar + 1);
   };
   const handleMinusUnit = () => {
-    if (unit !== 0) {
-      setUnit((prevVar: number) => prevVar - 1);
+    if (value !== 0) {
+      setValue((prevVar: number) => prevVar - 1);
     }
   };
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUnit(+e.target.value);
+    setValue(+e.target.value);
   };
   const controlSection = (
     <div className="tw-flex tw-flex-col">
@@ -41,7 +41,7 @@ const CustomeNumberInput: React.FC<CustomeNumberInput> = ({
   );
   const unitSection = (
     <div className="tw-h-full -tw-mr-[14px] tw-bg-[#F5F4F3] tw-px-[14px] tw-text-center">
-      <p>{unitLabel}</p>
+      <p>{unit}</p>
     </div>
   );
   return (
@@ -62,7 +62,7 @@ const CustomeNumberInput: React.FC<CustomeNumberInput> = ({
           step: '1',
         }}
         type="number"
-        value={unit}
+        value={value}
         onChange={handleInput}
         classes={{
           root: styled.inputNumber,

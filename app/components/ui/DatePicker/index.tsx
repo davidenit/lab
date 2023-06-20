@@ -3,6 +3,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import COLORS from '@/app/assets/theme/colors';
 
 export default function BasicDatePicker() {
   return (
@@ -15,13 +16,13 @@ export default function BasicDatePicker() {
               sx: {
                 '.MuiPickersDay-today': {
                   border: '0 !important',
-                  color: '#E03155',
+                  color: COLORS.colorPrimary,
                 },
                 '.MuiPickersDay-today:focus': {
                   borderRadius: '8px !important',
                 },
                 '.Mui-selected': {
-                  background: '#E03155',
+                  background: COLORS.colorPrimary,
                   color: 'white',
                   borderRadius: '8px',
                 },
