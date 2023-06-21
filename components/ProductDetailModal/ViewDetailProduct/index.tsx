@@ -3,7 +3,7 @@ import { Button, Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import Product from '@/app/assets/images/svg/Product.png';
 import clsx from 'clsx';
-import { WishlistHeartIcon, CloseIcon } from '@/app/assets/images/svg/icons';
+import { WishlistHeartIcon } from '@/app/assets/images/svg/icons';
 interface ViewDetailProductProps {}
 
 const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
@@ -27,9 +27,8 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
       <Button
         variant={'outlined'}
         color="primary"
-        className="tw-w-[400px] !tw-mt-4 tw-text-sm tw-uppercase"
+        className="tw-w-[400px] !tw-mt-4 tw-text-sm tw-uppercase tw-font-[450]"
         sx={{
-          fontWeight: 450,
           '&:hover': {
             backgroundColor: 'var(--colorPrimary)',
             color: '#fff',

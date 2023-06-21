@@ -1,7 +1,7 @@
 'use client';
 import React, { FC, useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
-import styles from './styles.module.css';
+import ProductPrice from '@/components/ProductPrice';
 import {
   WishlistHeartIcon,
   DocumentSearchIcon,
@@ -67,20 +67,10 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
           aria-describedby="modal-modal-description"
           className="tw-flex tw-items-center tw-justify-center"
         >
-          <ProductDetailModal />
+          <ProductDetailModal handleClose={handleClose} />
         </Modal>
       </Box>
-      <Box className="tw-flex tw-mt-[23px] tw-mx-4 ">
-        <Typography className="tw-m-0 !tw-text-sm">28.80 SGD</Typography>
-        <Typography
-          className="tw-m-0 tw-line-through !tw-text-[10px] !tw-ml-2 tw-self-end"
-          sx={{
-            color: 'var(--colorTextPlaceholder)',
-          }}
-        >
-          32.80 SGD
-        </Typography>
-      </Box>
+      <ProductPrice price={28.8} discount={32.8} />
       <Button
         variant="contained"
         className="tw-flex tw-box-border tw-group !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] tw-text-sm tw-rounded tw-self-center "

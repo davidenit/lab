@@ -3,8 +3,8 @@ import { Box, Button, Grid } from '@mui/material';
 import Image from 'next/image';
 import Search from './assets/images/svg/Search.svg';
 import { SearchIcon } from './assets/images/svg/icons';
-import PriceSlider from '@/components/priceSlider';
-import ProductContainer from '@/components/productContainer';
+import PriceSlider from '@/components/PriceSlider';
+import ProductContainer from '@/components/ProductContainer';
 export default function Home() {
   return (
     <Grid
