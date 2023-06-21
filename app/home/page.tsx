@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
-import Loading from './loading';
 import WrapIcon from './wrapIcon';
+import Loading from '@/components/loading';
 
 export const metadata: Metadata = {
   title: 'Home page',
