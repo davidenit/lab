@@ -13,7 +13,12 @@ module.exports = {
       border: '#A4A4A4',
       black: '#191817',
     },
-    extend: {},
+    extend: {
+      fontWeight: {
+        330: 330,
+        390: 390,
+      },
+    },
   },
   plugins: [],
   corePlugins: {

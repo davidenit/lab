@@ -1,0 +1,24 @@
+.active {
+  position: relative;
+  @apply tw-text-primary tw-capitalize tw-font-normal;
+}
+
+.active a {
+  @apply tw-text-primary tw-capitalize tw-font-normal;
+}
+.active::before {
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 100%;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  background-color: var(--colorPrimary);
+}
+
+@media screen and (max-width: 680px) {
+  .active::before {
+    position: unset;
+  }
+}
