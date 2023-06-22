@@ -7,10 +7,10 @@ import {
   Select,
   SelectChangeEvent,
   MenuItem,
-  InputLabel,
-  GlobalStyles,
-  FormHelperText,
 } from '@mui/material';
+import { ChevronRegularDownIcon } from '@/app/assets/images/svg/icons';
+import AttributeTitle from '../AttributeTitle';
+
 import clsx from 'clsx';
 
 interface ProductOptionsProps {
@@ -18,7 +18,7 @@ interface ProductOptionsProps {
 }
 
 const options = [
-  //   'selelct one',
+  '--Selelct one--',
   'black forest',
   'chocolate',
   'strawberry',
@@ -30,43 +30,46 @@ const ProductOptions: FC<ProductOptionsProps> = ({ attributeTitle }) => {
   const handleChange = (event: SelectChangeEvent) => {
     setOption(event.target.value as string);
   };
+  //write a function to handle change
   return (
     <Box sx={{ minWidth: 120 }} className="tw-mt-8">
-      {/* <GlobalStyles
-      styles={{ fieldset: { borderColor: 'var(--colorPrimary) !important' } }}
-      /> */}
-      <Typography className={clsx('tw-font-[420] tw-font-base tw-capitalize')}>
-        {attributeTitle}
-      </Typography>
+      <AttributeTitle filterType={'select filter'} />
       <FormControl className="tw-w-full">
         <Select
           value={option}
           onChange={handleChange}
           displayEmpty
           inputProps={{ 'aria-label': 'Without label' }}
-          className="tw-w-full tw-mt-6 tw-capitalize tw-pr-8 tw-pl-4 tw-text-sm"
+          className="tw-w-full tw-mt-6 tw-capitalize tw-pr-8 tw-pl-4 tw-text-sm tw-text-[#191817]"
           sx={{
+            '& .MuiOutlinedInput-input': {
+              padding: '13px 0px',
+              color: 'var(--colorTextPlaceholder)',
+            },
             '& .MuiOutlinedInput-notchedOutline': {
               borderColor: 'var(--colorBorder)',
+              color: 'var(--colorText)',
             },
-            '& .MuiOutlinedInput-notchedOutline:hover': {
-              borderColor: 'var(--colorBorder)',
+            '& .MuiSelect-iconOutlined': {
+              marginRight: '10px',
             },
-            '&:has(div[aria-expanded="true"]) .MuiOutlinedInput-notchedOutline':
+            '& .MuiOutlinedInput-notchedOutline:hover, &:has(div[aria-expanded="true"]) .MuiOutlinedInput-notchedOutline, &:has(div[aria-expanded="false"]) .MuiOutlinedInput-notchedOutline':
               {
                 borderColor: 'var(--colorBorder)',
-              },
-            '&:has(div[aria-expanded="false"]) .MuiOutlinedInput-notchedOutline':
-              {
-                borderColor: 'var(--colorBorder)',
+                borderWidth: '1px',
               },
           }}
+          IconComponent={ChevronRegularDownIcon}
         >
-          <MenuItem disabled value="">
-            <em>--Please Select--</em>
-          </MenuItem>
           {options.map((option, index) => (
-            <MenuItem key={option} value={option} className="tw-capitalize">
+            <MenuItem
+              key={option}
+              value={option}
+              className="tw-capitalize"
+              sx={{
+                color: 'var(--colorTextPlaceholder)',
+              }}
+            >
               {option}
             </MenuItem>
           ))}

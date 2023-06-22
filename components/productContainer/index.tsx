@@ -33,6 +33,14 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
   //     }
   //   }
   // `;
+  // const [addToWishlistMutation] = useMutation(ADD_TO_WISHLIST_MUTATION);
+  // const handleAddToWishlist = (productId: string) => {
+  //   addToWishlistMutation({
+  //     variables: {
+  //       productId: productId,
+  //     },
+  //   });
+  // };
   return (
     <Box
       className="tw-mt-5 tw-flex tw-flex-col tw-rounded-lg tw-bg-[#fff] tw-box-border tw-p-[2px] tw-relative"
@@ -51,6 +59,7 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
         <WishlistHeartIcon
           className="group-hover:tw-stroke-primary group-hover:tw-fill-primary"
           fontSize={24}
+          // onClick={() => handleAddToWishlist(productId)}
         />
       </Box>
       <Box className="tw-flex tw-justify-between tw-mt-2 tw-mx-4">
