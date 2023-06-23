@@ -3,6 +3,9 @@ import React, { useState, FC } from 'react';
 import { Box, Typography } from '@mui/material';
 import Slider from '@mui/material/Slider';
 import { ChevrondownIcon } from '@/app/assets/images/svg/icons';
+import clsx from 'clsx';
+import styles from './styles.module.css';
+
 interface priceSliderProps {}
 
 const PriceSlider = ({}: priceSliderProps) => {
@@ -40,14 +43,6 @@ const PriceSlider = ({}: priceSliderProps) => {
     },
   };
 
-  const TextWapperCss = {
-    color: 'var(--colorText)',
-    fontWeight: '420',
-    fontSize: '10px',
-    padding: '4px 17.5px ',
-    backgroundColor: 'var( --colorBgDefault)',
-    borderRadius: '2px',
-  };
   return (
     <Box sx={{ width: '256px' }}>
       <Box
@@ -57,20 +52,12 @@ const PriceSlider = ({}: priceSliderProps) => {
           alignItems: 'center',
         }}
       >
-        <Typography
-          id="range-slider"
-          sx={{
-            color: 'var(--colorText)',
-            fontSize: '18px',
-            fontWeight: 420,
-            fontFamily: 'Brandon Grotesque',
-          }}
-        >
+        <Typography id="range-slider" className="text">
           Price Range
         </Typography>
         <Box>
           <ChevrondownIcon
-            className={`${isShowed ? 'tw-rotate-180' : ''} tw-cursor-pointer`}
+            className={clsx({ 'tw-rotate-180': isShowed }, 'tw-cursor-pointer')}
             onClick={() => setIsShowed(!isShowed)}
           />
         </Box>
@@ -93,18 +80,13 @@ const PriceSlider = ({}: priceSliderProps) => {
             valueLabelDisplay="off"
             color={'primary'}
             sx={customStyleSlider}
+            className={clsx(styles.slider)}
           />
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              marginTop: '16px',
-            }}
-          >
-            <Box sx={TextWapperCss}>
+          <Box className="tw-flex tw-justify-center tw-mt-4">
+            <Box className={clsx(styles.priceWrapper)}>
               <p className="tw-w-[60px] tw-m-0"> {value[0].toFixed(2)} SGD</p>
             </Box>
-            <Box sx={TextWapperCss}>
+            <Box className={clsx(styles.priceWrapper)}>
               <p className="tw-w-[60px] tw-m-0"> {value[1].toFixed(2)} SGD</p>
             </Box>
           </Box>

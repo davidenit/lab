@@ -11,8 +11,16 @@ module.exports = {
       primary: '#E03155',
       text: '#191817',
       border: '#A4A4A4',
+      black: '#191817',
+      grey: '#7E7E7E',
+      white: '#ffffff',
     },
-    extend: {},
+    extend: {
+      fontWeight: {
+        330: 330,
+        390: 390,
+      },
+    },
   },
   plugins: [],
   corePlugins: {

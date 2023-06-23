@@ -27,7 +27,7 @@ const ProductInfor: FC<ProductInforProps> = ({}) => {
         discount={35.8}
         classNamePrice="!tw-text-2xl"
         className="!tw-mt-6 !tw-ml-0"
-        classNameDiscount="!tw-text-base !tw-text-[#191817] !tw-font-[390]"
+        classNameDiscount="!tw-text-base !tw-text-black !tw-font-[390]"
       />
     </Box>
   );

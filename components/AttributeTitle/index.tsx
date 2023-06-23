@@ -31,7 +31,7 @@ const AttributeTitle: FC<AttributeTitleProps> = ({
       {filterValue !== '' && chips && (
         <Typography
           onClick={handleChangeFilter}
-          className="tw-text-[#e03155] hover:tw-underline hover:tw-cursor-pointer"
+          className="tw-text-primary hover:tw-underline hover:tw-cursor-pointer"
         >
           Change
         </Typography>
