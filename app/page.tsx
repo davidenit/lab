@@ -6,23 +6,27 @@ import { SearchIcon } from './assets/images/svg/icons';
 import BasicDatePicker from './components/ui/DatePicker';
 import { CustomizedSteppers } from './components/ui/CustomeStepper';
 import YouTube, { YouTubeProps } from 'react-youtube';
-import CustomeNumberInput from './components/ui/CustomeNumberInput';
 import Footer from './components/ui/Footer';
+import { useRef, useState } from 'react';
+import InputNumberWithImage from './components/ui/InputNumberWithImage';
+import InputNumber from './components/ui/InputNumber';
+import CustomeSwiper, {
+  Navigation,
+  Pagination,
+  SwiperSlide,
+  Thumbs,
+  Swiper as SwiperType,
+} from './components/ui/Swiper';
+import { SWIPER_BREAKPOINT } from './components/ui/helper';
 
 export default function Home() {
-  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  };
+  const test = <div className="tw-w-64 tw-h-64 tw-bg-primary"></div>;
+  const swiperRef = useRef<SwiperType>();
 
-  const opts: YouTubeProps['opts'] = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
+  const testArray = Array.from({ length: 9 }, (_, index) => (
+    <div key={index}>{test}</div>
+  ));
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   return (
     <>
       <Grid
@@ -33,24 +37,45 @@ export default function Home() {
         direction="column"
       >
         <h1>Using Material UI with Next.js 13 and Tailwind</h1>
-        <Box>
-          <Image src={Search} alt="Search" height={24} width={24} />
-          <SearchIcon fontSize={24} />
-        </Box>
-        <Box className="tw-grid tw-grid-cols-3 tw-gap-2">
-          <Button variant="text">Text</Button>
-          <Button variant="contained" size="large" className="tw-uppercase">
-            create account
-          </Button>
-          <Button variant="outlined" size="large" className="tw-uppercase">
-            continue as guest
-          </Button>
-        </Box>
-        <BasicDatePicker />
-        <CustomizedSteppers />
-        <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} />
-        <CustomeNumberInput />
       </Grid>
+      <div className="tw-mx-14">
+        <CustomeSwiper
+          modules={[Pagination, Navigation, Thumbs]}
+          navigation
+          pagination={{ clickable: true }}
+          hideNavWithMobile
+          thumbs={{ swiper: thumbsSwiper }}
+          spaceBetween={10}
+          onBeforeInit={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+        >
+          {testArray.map((test: any, index: number) => (
+            <SwiperSlide className=" even:tw-opacity-70" key={index}>
+              {test}
+            </SwiperSlide>
+          ))}
+        </CustomeSwiper>
+        <CustomeSwiper
+          onSwiper={setThumbsSwiper}
+          modules={[Pagination, Navigation, Thumbs]}
+          navigation
+          pagination={{ clickable: true }}
+          hideNavWithMobile
+          spaceBetween={10}
+          slidesPerView={4}
+        >
+          {testArray.map((test: any, index: number) => (
+            <SwiperSlide className=" even:tw-opacity-70" key={index}>
+              {test}
+            </SwiperSlide>
+          ))}
+        </CustomeSwiper>
+        <div>
+          <button onClick={() => swiperRef.current?.slidePrev()}>Prev</button>
+          <button onClick={() => swiperRef.current?.slideNext()}>Next</button>
+        </div>
+      </div>
       <Footer />
     </>
   );

@@ -2,15 +2,16 @@ import { OutlinedInput } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import React from 'react';
-import styled from './CustomeNumberInput.module.css';
-export interface CustomeNumberInput {
+import styled from './InputNumberWithImage.module.css';
+
+export interface InputNumberWithImage {
   value: number;
   setValue: (value: number | ((prevVar: number) => number)) => void;
   unit: string;
   imageUrl: string;
 }
 
-const CustomeNumberInput: React.FC<CustomeNumberInput> = ({
+const InputNumberWithImage: React.FC<InputNumberWithImage> = ({
   value,
   setValue,
   unit,
@@ -76,4 +77,4 @@ const CustomeNumberInput: React.FC<CustomeNumberInput> = ({
   );
 };
 
-export default CustomeNumberInput;
+export default InputNumberWithImage;
