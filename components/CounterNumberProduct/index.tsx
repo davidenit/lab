@@ -1,3 +1,4 @@
+'use client';
 import { FC, useState } from 'react';
 import { Button, ButtonGroup, Box } from '@mui/material';
 import { PlusIcon, MinusIcon } from '@/app/assets/images/svg/icons';

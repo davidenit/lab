@@ -14,26 +14,21 @@ import clsx from 'clsx';
 
 interface ProductOptionsProps {
   attributeTitle: string;
+  options: string[];
 }
 
-const options = [
-  '--Selelct one--',
-  'black forest',
-  'chocolate',
-  'strawberry',
-  'vanilla',
-  'blueberry',
-];
-
-const ProductOptions: FC<ProductOptionsProps> = ({ attributeTitle }) => {
+const ProductOptions: FC<ProductOptionsProps> = ({
+  attributeTitle,
+  options,
+}) => {
   const [option, setOption] = useState<string>(options[0]);
   const handleChange = (event: SelectChangeEvent) => {
     setOption(event.target.value as string);
   };
 
   return (
-    <Box sx={{ minWidth: 120 }} className="tw-mt-8">
-      <AttributeTitle filterType={'select filter'} />
+    <Box sx={{ minWidth: 120 }} className="md:tw-mt-8 tw-mt-4">
+      <AttributeTitle filterType={attributeTitle} />
       <FormControl className="tw-w-full">
         <Select
           value={option}
@@ -41,7 +36,7 @@ const ProductOptions: FC<ProductOptionsProps> = ({ attributeTitle }) => {
           displayEmpty
           inputProps={{ 'aria-label': 'Without label' }}
           className={clsx(
-            'tw-w-full tw-mt-6 tw-capitalize tw-pr-8 tw-pl-4 tw-text-sm tw-text-text',
+            'tw-w-full tw-mt-6 tw-capitalize tw-pr-8 tw-pl-4 notification tw-text-text',
             styles.select
           )}
           IconComponent={ChevronRegularDownIcon}
@@ -50,7 +45,7 @@ const ProductOptions: FC<ProductOptionsProps> = ({ attributeTitle }) => {
             <MenuItem
               key={option}
               value={option}
-              className="tw-capitalize tw-text-text"
+              className="tw-capitalize tw-text-text notification"
             >
               {option}
             </MenuItem>

@@ -17,7 +17,7 @@ const ProductInfor: FC<ProductInforProps> = ({}) => {
       >
         Kueh Lapis
       </Typography>
-      <Typography className="tw-font-[300] tw-text-sm tw-leading-[120%] tw-mt-4">
+      <Typography className="tw-font-[300] notification tw-mt-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididun lore magna aliqua. Ut enim ad minim veniam. Duis aute
         irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -27,9 +27,9 @@ const ProductInfor: FC<ProductInforProps> = ({}) => {
       <ProductPrice
         price={34.8}
         discount={35.8}
-        classNamePrice="!tw-text-2xl"
+        classNamePrice="heading3"
         className="!tw-mt-6 !tw-ml-0 heading2"
-        classNameDiscount="!tw-text-base !tw-text-text !tw-font-[390]"
+        classNameDiscount="text !tw-text-text !tw-font-[390]"
       />
     </Box>
   );

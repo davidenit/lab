@@ -8,7 +8,7 @@ const InputMessage: FC<InputMessageProps> = ({}) => {
     <Box>
       <AttributeTitle filterType="Input your message" />
       <textarea
-        className="tw-w-full tw-h-[7rem] tw-border tw-border-border focus:tw-outline-none tw-rounded-[6px] tw-px-4 tw-py-[13px] tw-text-sm tw-font-base"
+        className="tw-w-full tw-h-[7rem] tw-border tw-border-border focus:tw-outline-none tw-rounded-[6px] tw-px-4 tw-py-[13px] text"
         placeholder="Message"
         maxLength={30}
       ></textarea>

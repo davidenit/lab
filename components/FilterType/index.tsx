@@ -7,23 +7,12 @@ import clsx from 'clsx';
 
 interface FilterTypeProps {
   filterType?: string;
+  options: string[];
 }
 
-const FilterType: FC<FilterTypeProps> = ({ filterType }) => {
+const FilterType: FC<FilterTypeProps> = ({ filterType, options }) => {
   const [filterValue, setFilterValue] = useState<string>('');
   const handleFilterChip = (chip: string) => setFilterValue(chip);
-  const chips = [
-    'black forest',
-    'chocolate',
-    'strawberry',
-    'vanilla',
-    'blueberry',
-    'cheese',
-    'lemon',
-    'mango',
-    'orange',
-    'pineapple',
-  ];
   const handleChangeFilter = () => setFilterValue('');
   return (
     <Box>
@@ -32,11 +21,11 @@ const FilterType: FC<FilterTypeProps> = ({ filterType }) => {
         filterValue={filterValue}
         handleChangeFilter={handleChangeFilter}
         handleFilterChip={handleFilterChip}
-        chips={chips}
+        chips={options}
       />
       {filterValue === '' && (
-        <Box className="tw-grid tw-grid-cols-3 tw-gap-4 tw-flex-wrap tw-w-full">
-          {chips?.map((chip, index) => (
+        <Box className="tw-grid md:tw-grid-cols-3 tw-grid-cols-2 tw-gap-4 tw-flex-wrap tw-w-full">
+          {options?.map((chip, index) => (
             <FilterChip
               key={index}
               chipName={chip}

@@ -15,6 +15,32 @@ interface ProductDetailModalProps {
 }
 
 const ProductDetailModal: FC<ProductDetailModalProps> = ({ handleClose }) => {
+  const attributes = [
+    {
+      type: 'filter',
+      title: 'Select Cream',
+      options: ['fresh', 'chocolate', 'vanilla'],
+    },
+    { type: 'select', title: 'Select weight', options: ['1kg', '2kg', '3kg'] },
+    {
+      type: 'filter',
+      title: 'select filling',
+      options: [
+        'black forest',
+        'chocolate',
+        'strawberry',
+        'vanilla',
+        'blueberry',
+        'cheese',
+        'lemon',
+        'mango',
+        'orange',
+        'pineapple',
+      ],
+    },
+  ];
+  const filterTypes = attributes.filter((att) => att.type === 'filter');
+  const selectTypes = attributes.filter((att) => att.type === 'select');
   return (
     <Container
       maxWidth="lg"
@@ -37,8 +63,20 @@ const ProductDetailModal: FC<ProductDetailModalProps> = ({ handleClose }) => {
           <ViewDetailProduct />
           <Box className="tw-box-border tw-pr-10">
             <ProductInfor />
-            <FilterType filterType="Select weight" />
-            <ProductOptions attributeTitle="Select flavor" />
+            {filterTypes.map((filterType) => (
+              <FilterType
+                key={filterType.title}
+                filterType={filterType.title}
+                options={filterType.options}
+              />
+            ))}
+            {selectTypes.map((selectType) => (
+              <ProductOptions
+                key={selectType.title}
+                attributeTitle={selectType.title}
+                options={selectType.options}
+              />
+            ))}
             <InputMessage />
             <CounterNumberProduct />
             <Button

@@ -5,10 +5,12 @@ import Product from '@/app/assets/images/svg/Product.png';
 import clsx from 'clsx';
 import { WishlistHeartIcon } from '@/app/assets/images/svg/icons';
 import DescriptionBox from '../../DescriptionBox';
+import { useWindowSize } from 'react-use';
 
 interface ViewDetailProductProps {}
 
 const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
+  const { width } = useWindowSize();
   const description = [
     {
       question: " What's the big idea",
@@ -47,12 +49,8 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
     },
   };
   return (
-    <Box className=" tw-w-[400px]">
-      <Box
-        className="tw-overflow-hidden tw-relative tw-m-0"
-        height={400}
-        width={400}
-      >
+    <Box className="lg:tw-w-[400px] md:tw-w-[300px] tw-w-full tw-border-box md:tw-pr-0">
+      <Box className="tw-overflow-hidden tw-relative tw-m-0 lg:tw-w-[400px] md:tw-w-[300px]">
         <Image src={Product} alt="Product" className="tw-h-full tw-w-full" />
         <Box className="tw-absolute tw-group tw-top-5 tw-right-5 tw-cursor-pointer tw-w-[30px] tw-h-[30px]">
           <WishlistHeartIcon
@@ -73,7 +71,7 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
       <Button
         variant={'outlined'}
         color="primary"
-        className="tw-w-[400px] !tw-mt-4 tw-uppercase tw-font-[450] notification"
+        className="tw-w-full !tw-mt-4 tw-uppercase tw-font-[450] notification"
         sx={{
           '&:hover': {
             backgroundColor: 'var(--colorPrimary)',
@@ -83,11 +81,13 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
       >
         View detail
       </Button>
-      <DescriptionBox
-        description={description}
-        delivery={delivery}
-        storePickUp={storePickUp}
-      />
+      {width > 480 && (
+        <DescriptionBox
+          description={description}
+          delivery={delivery}
+          storePickUp={storePickUp}
+        />
+      )}
     </Box>
   );
 };
