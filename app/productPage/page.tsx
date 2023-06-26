@@ -1,20 +1,18 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import Loading from './loading';
-import WrapIcon from './wrapIcon';
 
 export const metadata: Metadata = {
-  title: 'Home page',
-  description: 'Home page',
+  title: 'Product page',
+  description: 'Product page',
 };
 
-const HomePage = () => {
+const ProductPage = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <div>This is the Homepage</div>
-      <WrapIcon />
+      <div>This is the Productpage</div>
     </Suspense>
   );
 };
 
-export default HomePage;
+export default ProductPage;

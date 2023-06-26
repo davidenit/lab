@@ -1,14 +1,53 @@
-import { FC, useState } from 'react';
-import { Button, Box, Typography } from '@mui/material';
+import { FC } from 'react';
+import { Button, Box, GlobalStyles } from '@mui/material';
 import Image from 'next/image';
 import Product from '@/app/assets/images/svg/Product.png';
 import clsx from 'clsx';
 import { WishlistHeartIcon } from '@/app/assets/images/svg/icons';
+import DescriptionBox from '../../DescriptionBox';
+
 interface ViewDetailProductProps {}
 
 const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
+  const description = [
+    {
+      question: " What's the big idea",
+      answer:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun lore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    },
+    {
+      question: 'What are the benefits?',
+      answer:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun lore magna aliqua. ',
+    },
+    {
+      question: 'Great for...',
+      answer:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun lore magna aliqua.',
+    },
+  ];
+  const delivery = {
+    availableDay: {
+      title: 'Available for delivery:',
+      amount: '2 days',
+    },
+    availableTime: {
+      title: 'Available timeslot:',
+      timeslot: ['1:00 PM - 4:00 PM', '3:00 PM - 6:00 PM', '6:00 PM - 8:00 PM'],
+    },
+  };
+  const storePickUp = {
+    availableDay: {
+      title: 'Available for pickup:',
+      amount: '2 days',
+    },
+    availableTime: {
+      title: 'Available timeslot:',
+      timeslot: ['1:00 PM - 4:00 PM', '3:00 PM - 6:00 PM', '6:00 PM - 8:00 PM'],
+    },
+  };
   return (
-    <Box className="">
+    <Box className=" tw-w-[400px]">
       <Box
         className="tw-overflow-hidden tw-relative tw-m-0"
         height={400}
@@ -24,10 +63,17 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
           />
         </Box>
       </Box>
+      <GlobalStyles
+        styles={{
+          '.MuiButton-root': {
+            border: '2px solid var(--colorPrimary)!important',
+          },
+        }}
+      />
       <Button
         variant={'outlined'}
         color="primary"
-        className="tw-w-[400px] !tw-mt-4 tw-text-sm tw-uppercase tw-font-[450]"
+        className="tw-w-[400px] !tw-mt-4 tw-uppercase tw-font-[450] notification"
         sx={{
           '&:hover': {
             backgroundColor: 'var(--colorPrimary)',
@@ -37,6 +83,11 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({}) => {
       >
         View detail
       </Button>
+      <DescriptionBox
+        description={description}
+        delivery={delivery}
+        storePickUp={storePickUp}
+      />
     </Box>
   );
 };

@@ -1,16 +1,17 @@
 import { FC } from 'react';
-import { Button, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import ProductPrice from '@/components/ProductPrice';
-import CounterNumberProduct from '@/components/CounterNumberProduct';
+import PromotiontTag from '@/components/PromotionTag';
+import Tags from '@/components/Tags';
 interface ProductInforProps {}
 
 const ProductInfor: FC<ProductInforProps> = ({}) => {
   return (
     <Box className="tw-flex-1 tw-flex-col ">
+      <PromotiontTag contentTag="sale" />
       <Typography
-        className="!tw-text-[32px] tw-leading-[120%] tw-font-normal"
+        className="heading2"
         sx={{
-          color: 'var(--textColorPrimary)',
           fontFamily: 'Philosopher',
         }}
       >
@@ -22,12 +23,13 @@ const ProductInfor: FC<ProductInforProps> = ({}) => {
         irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
         fugiat nulla pariatur.
       </Typography>
+      <Tags tagConent="Cake, Signature Range" />
       <ProductPrice
         price={34.8}
         discount={35.8}
         classNamePrice="!tw-text-2xl"
-        className="!tw-mt-6 !tw-ml-0"
-        classNameDiscount="!tw-text-base !tw-text-black !tw-font-[390]"
+        className="!tw-mt-6 !tw-ml-0 heading2"
+        classNameDiscount="!tw-text-base !tw-text-text !tw-font-[390]"
       />
     </Box>
   );

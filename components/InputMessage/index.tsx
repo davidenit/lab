@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import AttributeTitle from '../AttributeTitle';
 import { Box, Typography } from '@mui/material';
 interface InputMessageProps {}

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, FC } from 'react';
+import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import Slider from '@mui/material/Slider';
 import { ChevrondownIcon } from '@/app/assets/images/svg/icons';
@@ -45,13 +45,7 @@ const PriceSlider = ({}: priceSliderProps) => {
 
   return (
     <Box sx={{ width: '256px' }}>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
+      <Box className="tw-flex tw-justify-between tw-items-center">
         <Typography id="range-slider" className="text">
           Price Range
         </Typography>
@@ -63,13 +57,7 @@ const PriceSlider = ({}: priceSliderProps) => {
         </Box>
       </Box>
       {isShowed && (
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            marginTop: '29px',
-          }}
-        >
+        <Box className="tw-flex tw-flex-col tw-mt-[29px]">
           <Slider
             value={value}
             onChange={handleChange}
@@ -82,7 +70,7 @@ const PriceSlider = ({}: priceSliderProps) => {
             sx={customStyleSlider}
             className={clsx(styles.slider)}
           />
-          <Box className="tw-flex tw-justify-center tw-mt-4">
+          <Box className="tw-flex tw-justify-between tw-mt-4">
             <Box className={clsx(styles.priceWrapper)}>
               <p className="tw-w-[60px] tw-m-0"> {value[0].toFixed(2)} SGD</p>
             </Box>

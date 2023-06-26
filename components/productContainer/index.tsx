@@ -79,7 +79,7 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
           <ProductDetailModal handleClose={handleClose} />
         </Modal>
       </Box>
-      <ProductPrice price={28.8} discount={32.8} />
+      <ProductPrice price={28.8} discount={32.8} className="notification" />
       <Button
         variant="contained"
         className="tw-flex tw-box-border tw-group !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] tw-text-sm tw-rounded tw-self-center "

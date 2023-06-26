@@ -12,7 +12,7 @@ const CounterNumberProduct: FC<CounterNumberProductProps> = ({}) => {
       <ButtonGroup
         size="small"
         aria-label="small button group"
-        className="tw-rounded-sm "
+        className="tw-rounded-sm tw-border-[1px]"
         sx={{
           border: '1px solid var(--colorBorder)',
         }}
@@ -22,9 +22,9 @@ const CounterNumberProduct: FC<CounterNumberProductProps> = ({}) => {
           onClick={() => {
             setCounter(counter - 1);
           }}
+          className="!tw-py-[10px] !tw-px-[15px]"
           sx={{
             border: 'none!important',
-            padding: '10px 15px!important',
             '&:hover': { border: 'none', backgroundColor: 'transparent' },
           }}
         >
@@ -32,11 +32,9 @@ const CounterNumberProduct: FC<CounterNumberProductProps> = ({}) => {
         </Button>
         {
           <Button
-            className="!tw-text-xl tw-w-[20px]"
+            className="body1 tw-w-[20px] !tw-py-[10px] !tw-px-[15px] !tw-text-text"
             sx={{
-              border: 'none',
-              padding: '10px 15px',
-              color: 'var(--colorText)',
+              border: 'none!important',
               '&:hover': { border: 'none', backgroundColor: 'transparent' },
             }}
           >
@@ -49,10 +47,9 @@ const CounterNumberProduct: FC<CounterNumberProductProps> = ({}) => {
             onClick={() => {
               setCounter(counter + 1);
             }}
-            className="tw-p-[6px]"
+            className="tw-p-[6px] !tw-py-[10px] !tw-px-[15px]"
             sx={{
-              border: 'none',
-              padding: '10px 15px',
+              border: 'none!important',
               '&:hover': { border: 'none', backgroundColor: 'transparent' },
             }}
           >

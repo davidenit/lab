@@ -24,7 +24,7 @@ html {
   --colorText: #191817;
   --colorBorder: #a4a4a4;
   --colorPrimaryHover: #375eab;
-  e: #7e7e7e;
+  --colorTextPlaceholder: #7e7e7e;
   --colorSuccess: #2db763;
   --colorWarning: #f47d23;
   --colorTextDisabled: #b1b1b1;
@@ -84,20 +84,20 @@ html {
 .heading2 {
   font-style: normal;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 2rem !important;
   /*32px*/
-  line-height: 120%;
+  line-height: 120% !important;
   /* identical to box height, or 48px */
 
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em !important;
 }
 
 .body1 {
   font-style: normal;
-  font-weight: 390;
-  font-size: 1.25rem;
+  font-weight: 390 !important;
+  font-size: 1.25rem !important;
   /*20px*/
-  line-height: 120%;
+  line-height: 120% !important;
   /* identical to box height, or 48px */
 
   letter-spacing: 0.02em;
@@ -128,12 +128,19 @@ html {
 .notification {
   font-style: normal;
   font-weight: 330;
-  font-size: 0.875rem;
+  font-size: 0.875rem !important;
   /*14px*/
-  line-height: 120%;
+  line-height: 120% !important;
   /* identical to box height, or 48px */
 
   letter-spacing: 0.02em;
+}
+
+.text-small {
+  font-size: 0.625rem !important;
+  font-weight: 390;
+  line-height: 12px !important;
+  letter-spacing: 2% !important;
 }
 
 @media screen and (max-width: 480px) {

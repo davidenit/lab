@@ -15,12 +15,12 @@ const ProductPrice: FC<ProductPriceProps> = (props: ProductPriceProps) => {
     props;
   return (
     <Box className={clsx('tw-flex tw-mt-[23px] tw-mx-4', className)}>
-      <Typography className={clsx('tw-m-0 tw-text-sm', classNamePrice)}>
+      <Typography className={clsx('tw-m-0', classNamePrice)}>
         {price.toFixed(2)} <span>SGD</span>
       </Typography>
       <Typography
         className={clsx(
-          'tw-m-0 tw-line-through !tw-text-[10px] !tw-ml-2 tw-self-end',
+          'tw-m-0 tw-line-through !tw-text-[0.625rem] !tw-ml-2 tw-self-end',
           classNameDiscount
         )}
         sx={{

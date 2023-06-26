@@ -41,7 +41,7 @@ const ProductOptions: FC<ProductOptionsProps> = ({ attributeTitle }) => {
           displayEmpty
           inputProps={{ 'aria-label': 'Without label' }}
           className={clsx(
-            'tw-w-full tw-mt-6 tw-capitalize tw-pr-8 tw-pl-4 tw-text-sm tw-text-black',
+            'tw-w-full tw-mt-6 tw-capitalize tw-pr-8 tw-pl-4 tw-text-sm tw-text-text',
             styles.select
           )}
           IconComponent={ChevronRegularDownIcon}
@@ -50,10 +50,7 @@ const ProductOptions: FC<ProductOptionsProps> = ({ attributeTitle }) => {
             <MenuItem
               key={option}
               value={option}
-              className="tw-capitalize"
-              sx={{
-                color: 'var(--colorTextPlaceholder)',
-              }}
+              className="tw-capitalize tw-text-text"
             >
               {option}
             </MenuItem>

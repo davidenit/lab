@@ -14,9 +14,7 @@ interface ProductDetailModalProps {
   handleClose?: () => void;
 }
 
-const ProductDetailModal: FC<ProductDetailModalProps> = ({
-  handleClose,
-}: ProductDetailModalProps) => {
+const ProductDetailModal: FC<ProductDetailModalProps> = ({ handleClose }) => {
   return (
     <Container
       maxWidth="lg"
@@ -45,15 +43,7 @@ const ProductDetailModal: FC<ProductDetailModalProps> = ({
             <CounterNumberProduct />
             <Button
               variant="contained"
-              className="tw-uppercase !tw-mt-6 !tw-px-[90px] !tw-py-[12.5px] tw-flex tw-items-center tw-justify-center !tw-font-[450] tw-overflow-hidden"
-              sx={{
-                '&:hover': {
-                  backgroundColor: '#fff',
-                  boxShadow: 'none',
-                  outline: '2px solid var(--colorPrimary)',
-                  color: 'var(--colorPrimary)',
-                },
-              }}
+              className="tw-uppercase hover:tw-text-primary hover:!tw-bg-white hover:!tw-shadow-none !tw-mt-6 !tw-px-[90px] !tw-py-[12.5px] tw-flex tw-items-center tw-justify-center !tw-font-[450] tw-overflow-hidden"
             >
               add to basket
             </Button>
