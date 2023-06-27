@@ -27,7 +27,7 @@ const FilterType: FC<FilterTypeProps> = ({ filterType, options }) => {
         <Box className="tw-grid md:tw-grid-cols-3 tw-grid-cols-2 tw-gap-4 tw-flex-wrap tw-w-full">
           {options?.map((chip, index) => (
             <FilterChip
-              key={index}
+              key={chip}
               chipName={chip}
               handleFilterChip={handleFilterChip}
             />

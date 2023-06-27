@@ -22,6 +22,7 @@ html {
 :root {
   --colorPrimary: #e03155;
   --colorText: #191817;
+  --colorWhite: '#FFFFFF';
   --colorBorder: #a4a4a4;
   --colorPrimaryHover: #375eab;
   --colorTextPlaceholder: #7e7e7e;
@@ -32,6 +33,8 @@ html {
   --colorTagBg: #f3ccc5;
   --colorBgDefault: #f5f4f3;
   --colorLink: #375eab;
+  --colorBorderChip: #c6cfe7;
+  --colorBoxShadow: rgba(0, 0, 0, 0.15);
 }
 
 .ant-select-selector {
@@ -84,30 +87,30 @@ html {
 .heading2 {
   font-style: normal;
   font-weight: 400;
-  font-size: 2rem !important;
+  font-size: 2rem;
   /*32px*/
-  line-height: 120% !important;
+  line-height: 120%;
   /* identical to box height, or 48px */
 
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0.02em;
 }
 
 .heading3 {
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
   /*24px*/
-  line-height: 120% !important;
+  line-height: 120%;
   /* identical to box height, or 48px */
 
   letter-spacing: 0.02em;
 }
 .body1 {
   font-style: normal;
-  font-weight: 390 !important;
-  font-size: 1.25rem !important;
+  font-weight: 390;
+  font-size: 1.25rem;
   /*20px*/
-  line-height: 120% !important;
+  line-height: 120%;
   /* identical to box height, or 48px */
 
   letter-spacing: 0.02em;
@@ -116,7 +119,7 @@ html {
 .body2 {
   font-style: normal;
   font-weight: 390;
-  font-size: 1.125rem !important;
+  font-size: 1.125rem;
   /*18px*/
   line-height: 120%;
   /* identical to box height, or 48px */
@@ -127,7 +130,7 @@ html {
 .text {
   font-style: normal;
   font-weight: 330;
-  font-size: 1rem !important;
+  font-size: 1rem;
   /*16px*/
   line-height: 120%;
   /* identical to box height, or 48px */
@@ -138,50 +141,50 @@ html {
 .notification {
   font-style: normal;
   font-weight: 330;
-  font-size: 0.875rem !important;
+  font-size: 0.875rem;
   /*14px*/
-  line-height: 120% !important;
+  line-height: 120%;
   /* identical to box height, or 48px */
 
   letter-spacing: 0.02em;
 }
 
 .text-small {
-  font-size: 0.625rem !important;
+  font-size: 0.625rem;
   font-weight: 390;
-  line-height: 12px !important;
-  letter-spacing: 2% !important;
+  line-height: 12px;
+  letter-spacing: 2%;
 }
 
 @media screen and (max-width: 480px) {
   .heading1 {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
     /*28px*/
   }
 
   .heading2 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
     /*24px*/
   }
 
   .heading3 {
-    font-size: 1.125rem !important;
+    font-size: 1.125rem;
     /*18px*/
   }
 
   .body1 {
-    font-size: 1rem !important;
+    font-size: 1rem;
     /*16px*/
   }
 
   .body2 {
-    font-size: 0.875rem !important;
+    font-size: 0.875rem;
     /*14px*/
   }
 
   .notification,
   .text {
-    font-size: 0.75rem !important;
+    font-size: 0.75rem;
     /*12px*/
   }
 }

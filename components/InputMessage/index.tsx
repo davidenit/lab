@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import AttributeTitle from '../AttributeTitle';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 interface InputMessageProps {}
 
 const InputMessage: FC<InputMessageProps> = ({}) => {
@@ -12,9 +12,9 @@ const InputMessage: FC<InputMessageProps> = ({}) => {
         placeholder="Message"
         maxLength={30}
       ></textarea>
-      <Typography className="!tw-text-xs tw-text-grey tw-font-[330]">
+      <p className="!tw-text-xs tw-mb-0 tw-text-grey tw-font-[330]">
         <span>* </span>Maximum 30 characters
-      </Typography>
+      </p>
     </Box>
   );
 };
