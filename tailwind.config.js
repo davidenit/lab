@@ -12,6 +12,10 @@ module.exports = {
       text: '#191817',
       border: '#A4A4A4',
       black: '#191817',
+      grey: '#7E7E7E',
+      white: '#ffffff',
+      tagBackground: '#F3CCC5',
+      lightGrey: '#F5F4F3',
     },
     extend: {
       fontWeight: {

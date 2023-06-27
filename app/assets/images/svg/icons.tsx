@@ -58,12 +58,12 @@ export const DocumentSearchIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      stroke="#191817"
+      stroke-width="1.2"
       {...props}
     >
       <path
         d="M10 21H17C18.1046 21 19 20.1046 19 19V9.41421C19 9.149 18.8946 8.89464 18.7071 8.70711L13.2929 3.29289C13.1054 3.10536 12.851 3 12.5858 3H7C5.89543 3 5 3.89543 5 5V16M5 21L9.87868 16.1213M9.87868 16.1213C10.4216 16.6642 11.1716 17 12 17C13.6569 17 15 15.6569 15 14C15 12.3431 13.6569 11 12 11C10.3431 11 9 12.3431 9 14C9 14.8284 9.33579 15.5784 9.87868 16.1213Z"
-        stroke="#191817"
-        stroke-width="1.2"
         stroke-linecap="round"
       />
     </svg>
@@ -547,12 +547,12 @@ export const PlusIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       height="1em"
       viewBox="0 0 28 28"
       fill="none"
+      stroke="#191817"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
         d="M13.992 7V14M13.992 14V21M13.992 14H20.7878M13.992 14L7.19629 14"
-        stroke="#191817"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -852,7 +852,10 @@ export const WishlistIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   );
 };
 
-export const WishlistUnactiveIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+export const WishlistHeartIcon: FC<SVGProps<SVGSVGElement>> = ({
+  className,
+  ...props
+}) => {
   return (
     <svg
       width="1em"
@@ -863,9 +866,17 @@ export const WishlistUnactiveIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       {...props}
     >
       <circle opacity="0.5" cx="12" cy="12" r="12" fill="white" />
-      <path
+      {/* <path
         d="M16.05 4C14.484 4 12.981 4.75041 12 5.93624C11.019 4.75041 9.516 4 7.95 4C5.178 4 3 6.24196 3 9.09537C3 12.5973 6.06 15.4507 10.695 19.7864L12 21L13.305 19.7771C17.94 15.4507 21 12.5973 21 9.09537C21 6.24196 18.822 4 16.05 4ZM12.09 18.406L12 18.4986L11.91 18.406C7.626 14.4131 4.8 11.7728 4.8 9.09537C4.8 7.24251 6.15 5.85286 7.95 5.85286C9.336 5.85286 10.686 6.77003 11.163 8.03924H12.846C13.314 6.77003 14.664 5.85286 16.05 5.85286C17.85 5.85286 19.2 7.24251 19.2 9.09537C19.2 11.7728 16.374 14.4131 12.09 18.406Z"
-        fill="currentColor"
+        fill="#7E7E7E"
+      /> */}
+      <path
+        d="M12 20.875L10.695 19.6611C6.06 15.3665 3 12.5341 3 9.0579C3 6.22548 5.178 4 7.95 4C9.516 4 11.019 4.74489 12 5.922C12.981 4.74489 14.484 4 16.05 4C18.822 4 21 6.22548 21 9.0579C21 12.5341 17.94 15.3665 13.305 19.6703L12 20.875Z"
+        fill={'none'}
+        stroke={'#7E7E7E'}
+        className={className}
+        strokeWidth={1.5}
+        // fill="currentColor"
       />
     </svg>
   );

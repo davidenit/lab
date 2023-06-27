@@ -6,7 +6,7 @@ const Footer = () => {
   const { isMobileView } = useResize();
   return (
     <>
-      <div className="tw-bg-black tw-text-[#FFFF]">
+      <div className="tw-bg-black tw-text-white">
         <div className="tw-text-center md:tw-text-left md:tw-flex md:tw-flex-row-reverse md:tw-justify-between">
           <FooterLogo />
           <div className="tw-gap-8 tw-flex tw-flex-col tw-mt-10 md:tw-flex-row md:tw-mt-0 md:tw-gap-16">
