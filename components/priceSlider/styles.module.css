@@ -1,0 +1,8 @@
+.priceWrapper {
+  color: var(--colorText);
+  font-weight: 420;
+  font-size: 0.625rem;
+  padding: 4px 17.5px;
+  background-color: var(--colorBgDefault);
+  border-radius: 2px;
+}
