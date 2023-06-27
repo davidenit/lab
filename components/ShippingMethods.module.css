@@ -4,7 +4,7 @@
   height: 16px;
   border-radius: 50%;
   vertical-align: middle;
-  border: 1px solid #7e7e7e;
+  border: 1px solid var(--colorTextPlaceholder);
   appearance: none;
   -webkit-appearance: none;
   outline: none;
@@ -12,7 +12,7 @@
 }
 
 .circleHandle {
-  background-color: red;
+  background-color: var(--colorPrimary);
   border: none;
   position: relative;
   transition: 0.7s linear;
@@ -30,13 +30,13 @@
 }
 
 .checkedTotal {
-  border: 1.5px solid red;
+  border: 1.5px solid var(--colorPrimary);
   border-radius: 4px;
   transition: 0.7s linear;
 }
 
 .borderColor {
-  border-bottom: 1px solid #a4a4a4;
+  border-bottom: 1px solid var(--colorBorder);
 }
 
 .addressCheckbox {

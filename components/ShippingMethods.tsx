@@ -68,7 +68,7 @@ function ShippingMethods() {
           <div className={`tw-grid tw-grid-cols-2 tw-gap-8 tw-pb-8 `}>
             {data.map((item) => (
               <div
-                className={`tw-w-full tw-h-[88px] tw-rounded-[6px] tw-border tw-border-[#A4A4A4] tw-border-solid tw-cursor-pointer   ${
+                className={`tw-w-full tw-h-[88px] tw-rounded-[6px] tw-border tw-border-[--colorBorder] tw-border-solid tw-cursor-pointer   ${
                   watch('ShippingMethods') === item.text1 && styles.checkedTotal
                 }`}
                 key={item.id}
@@ -91,7 +91,7 @@ function ShippingMethods() {
                     />
                   </div>
                   <div className="tw-flex tw-flex-col tw-cursor-pointer">
-                    <span className="tw-text-lg tw-text-[#191817] tw-font-[390]">
+                    <span className="tw-text-lg tw-text-[--colorText] tw-font-[390]">
                       {item.text1}
                     </span>
                     <span className="tw-font-[300]">{item.text2}</span>
@@ -132,8 +132,8 @@ function ShippingMethods() {
                     <p
                       className={`tw-max-w-fit ${
                         watch('ShippingDelivery') === item.text1
-                          ? ' tw-bg-[#A4A4A4] tw-border-[#A4A4A4]'
-                          : 'tw-bg-[red] tw-border-[red]'
+                          ? ' tw-bg-[--colorBorder] tw-border-[--colorBorder]'
+                          : 'tw-bg-[--colorPrimary] tw-border-[--colorPrimary]'
                       }  tw-text-[white] tw-border-[1px]  tw-border-solid tw-px-4 tw-py-1 tw-text-sm tw-uppercase tw-font-medium tw-rounded tw-mt-[20px] tw-transition tw-duration-700 tw-ease-linear`}
                     >
                       {watch('ShippingDelivery') === item.text1
@@ -145,7 +145,7 @@ function ShippingMethods() {
               ))}
             </div>
             <button
-              className="tw-uppercase tw-text-sm tw-text-[red] tw-rounded-[6px] tw-border tw-border-[red] tw-border-solid tw-px-4 tw-py-1 tw-bg-[white] tw-text-left tw-cursor-pointer tw-float-right tw-mt-3"
+              className="tw-uppercase tw-text-sm tw-text-[--colorPrimary] tw-rounded-[6px] tw-border tw-border-[--colorPrimary] tw-border-solid tw-px-4 tw-py-1 tw-bg-[white] tw-text-left tw-cursor-pointer tw-float-right tw-mt-3"
               onClick={(e) => e.preventDefault()}
             >
               new address

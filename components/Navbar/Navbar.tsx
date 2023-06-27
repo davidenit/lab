@@ -11,6 +11,7 @@ import {
 import { Button } from '@mui/material';
 import Image from 'next/image';
 import ImgaeHoverNavbar from '../../app/assets/images/png/Rectangle.png';
+import clsx from 'clsx';
 
 const dataNavbar = [
   {
@@ -188,20 +189,23 @@ function Navbar() {
     <div className="tw-relative">
       <div>
         <div
-          className={` tw-flex ${
-            isHandleOpenNavbar ? 'tw-p-6 tw-pb-8' : 'tw-pr-5 tw-pl-4 tw-py-2'
-          }  tw-w-full tw-fixed sm:tw-h-16 md:tw-h-24 tw-top-0 tw-left-0 tw-bg-[white] md:tw-bg-[transparent]  md:tw-py-0 md:tw-px-0 tw-justify-between md:tw-justify-around tw-items-center tw-z-10 tw-transition-all tw-duration-300 tw-ease-linear  ${
-            showBackground ? 'md:tw-bg-[white] ' : ''
-          }`}
+          className={clsx(
+            'tw-flex  tw-w-full tw-fixed sm:tw-h-16 md:tw-h-24 tw-top-0 tw-left-0 tw-bg-[white] md:tw-bg-[transparent]  md:tw-py-0 md:tw-px-0 tw-justify-between md:tw-justify-around tw-items-center tw-z-10 tw-transition-all tw-duration-300 tw-ease-linear',
+            {
+              'md:tw-bg-[white]': showBackground,
+              'tw-p-6 tw-pb-8': isHandleOpenNavbar === true,
+              'tw-pr-5 tw-pl-4 tw-py-2': isHandleOpenNavbar === false,
+            }
+          )}
         >
           <div
             className={` tw-flex tw-items-center tw-transition-all tw-duration-300 tw-ease-linear`}
           >
             <HamburgerIcon
               fontSize={24}
-              className={`md:tw-hidden tw-mr-2 tw-cursor-pointer ${
-                isHandleOpenNavbar ? 'tw-hidden' : 'tw-block'
-              }`}
+              className={clsx(`md:tw-hidden tw-mr-2 tw-cursor-pointer`, {
+                'tw-hidden': isHandleOpenNavbar,
+              })}
               onClick={handleOpenNavbar}
             />
             <div
@@ -213,9 +217,12 @@ function Navbar() {
 
           <div className="tw-flex tw-justify-between tw-items-center">
             <nav
-              className={`${
-                isHandleOpenNavbar ? 'tw-left-0' : 'tw-left-[-1250px]'
-              } tw-transition-all tw-duration-500 tw-ease-linear ${styles.nav}`}
+              className={clsx(
+                ` tw-transition-all tw-left-0 tw-duration-500 tw-ease-linear ${styles.nav}`,
+                {
+                  'tw-left-[-1250px]': isHandleOpenNavbar === false,
+                }
+              )}
             >
               <ul className={`${styles.ul} tw-flex tw-relative `}>
                 {dataNavbar.map((item) => (
@@ -225,11 +232,12 @@ function Navbar() {
                     onClick={item.children && handleOpenNavMobile}
                   >
                     <a
-                      className={`md:tw-mr-8 tw-cursor-pointer tw-absolute tw-flex tw-justify-between tw-w-full ${
-                        showBackground
-                          ? 'md:tw-text-[black]'
-                          : 'md:tw-text-[white]'
-                      }  ${styles.underlineNavbar} ${styles.underlineMobile}`}
+                      className={clsx(
+                        `md:tw-mr-8 tw-cursor-pointer md:tw-text-[white] tw-absolute tw-flex tw-justify-between tw-w-full ${styles.underlineNavbar} ${styles.underlineMobile}`,
+                        {
+                          'md:tw-text-[--colorText]': showBackground,
+                        }
+                      )}
                     >
                       {item.text}
                       {item.children && (
@@ -252,7 +260,7 @@ function Navbar() {
                             {item.children?.map((item) => (
                               <li
                                 key={item.id}
-                                className="tw-list-none xl:tw-pr-14 tw-pr-12 last:tw-text-[blue] last:tw-underline"
+                                className={`tw-list-none xl:tw-pr-14 tw-pr-12 last:tw-text-[--colorLink] last:tw-underline ${styles.hoverLitoShowResponRight}`}
                               >
                                 <a
                                   href=""
@@ -261,7 +269,7 @@ function Navbar() {
                                   {item.text}
                                   {item.children && (
                                     <div
-                                      className={`tw-absolute tw-top-0 lg:tw-right-[-288%] lg:tw-pl-14 tw-pl-8 ${styles.responRight} `}
+                                      className={`tw-absolute tw-top-0 lg:tw-right-[-325%] lg:tw-pl-14 tw-pl-8 ${styles.responRight}`}
                                     >
                                       <ul className="tw-grid lg:tw-grid-cols-3 md:tw-grid-cols-2 tw-w-max tw-pl-0">
                                         {item.children?.map((item) => (
@@ -306,7 +314,7 @@ function Navbar() {
                           {item.children?.map((item) => (
                             <li
                               key={item.id}
-                              className="tw-list-none last:tw-text-[blue] last:tw-underline last:tw-pb-2"
+                              className="tw-list-none last:tw-text-[--colorLink] last:tw-underline last:tw-pb-2"
                               onClick={
                                 item.children && handleOpenNavMobileChildren
                               }
@@ -315,16 +323,19 @@ function Navbar() {
                                 className={`tw-m-0 tw-mb-6 tw-no-underline tw-flex tw-justify-between tw-text-yellow-500 ${
                                   isOpenChildren &&
                                   item.children &&
-                                  'tw-text-[red] tw-mb-4'
+                                  'tw-text-[--colorPrimary] tw-mb-4'
                                 }`}
                               >
                                 {item.text}
                                 {item.children && (
                                   <ChevronRegularDownIcon
                                     fontSize={24}
-                                    className={`md:tw-hidden tw-cursor-pointer tw-transition-all tw-duration-300 tw-ease-linear ${
-                                      isOpenChildren && 'tw-rotate-180'
-                                    }`}
+                                    className={clsx(
+                                      `md:tw-hidden tw-cursor-pointer tw-transition-all tw-duration-300 tw-ease-linear`,
+                                      {
+                                        'tw-rotate-180': isOpenChildren,
+                                      }
+                                    )}
                                   />
                                 )}
                               </a>
@@ -338,7 +349,7 @@ function Navbar() {
                                       >
                                         <a
                                           href=""
-                                          className="tw-no-underline tw-text-[black] "
+                                          className="tw-no-underline tw-text-[--colorText] "
                                         >
                                           {item.text}
                                         </a>
@@ -360,57 +371,60 @@ function Navbar() {
             <div className="tw-cursor-pointer tw-flex tw-mt-0 ">
               <CloseIcon
                 fontSize={24}
-                className={`${
-                  isHandleOpenNavbar ? 'tw-block' : 'tw-hidden'
-                } md:tw-hidden tw-cursor-pointer`}
+                className={clsx(`md:tw-hidden tw-cursor-pointer`, {
+                  'tw-block': isHandleOpenNavbar === true,
+                  'tw-hidden': isHandleOpenNavbar === false,
+                })}
                 onClick={handleOpenNavbar}
               />
 
               <>
                 <SearchIcon
                   fontSize={24}
-                  className={`tw-mr-1 md:tw-mr-5 tw-ml-2 ${
-                    showBackground
-                      ? 'md:tw-stroke-[--colorText]'
-                      : 'md:tw-stroke-[white]'
-                  }  hover:tw-stroke-primary tw-transition-all tw-duration-300 tw-ease-linear md:tw-block tw-stroke-[black]  ${
-                    isHandleOpenNavbar && 'tw-hidden'
-                  }`}
+                  className={clsx(
+                    `tw-mr-1 md:tw-stroke-[--colorText] md:tw-mr-5 tw-ml-2 hover:tw-stroke-[--colorPrimary] tw-transition-all tw-duration-300 tw-ease-linear md:tw-block tw-stroke-[--colorText] `,
+                    {
+                      'tw-hidden': isHandleOpenNavbar,
+                      'md:tw-stroke-[white]': showBackground === false,
+                    }
+                  )}
                   onClick={handleSearch}
                 />
                 <CartIcon
                   fontSize={24}
-                  className={`md:tw-mr-6 tw-mr-1 ${
-                    showBackground
-                      ? 'md:tw-fill-[--colorText]'
-                      : 'md:tw-fill-[white]'
-                  } tw-fill-[black] hover:tw-fill-primary md:tw-block tw-transition-all tw-duration-300 tw-ease-linear ${
-                    isHandleOpenNavbar && 'tw-hidden'
-                  }`}
+                  className={clsx(
+                    `md:tw-mr-6 tw-mr-1 tw-fill-[--colorText] hover:tw-fill-[--colorPrimary] md:tw-block tw-transition-all tw-duration-300 tw-ease-linear `,
+                    {
+                      'tw-hidden': isHandleOpenNavbar,
+                      'md:tw-fill-[white]': showBackground === false,
+                    }
+                  )}
                 />
                 <UserMediumIcon
                   fontSize={24}
-                  className={`tw-mr-1 ${
-                    showBackground
-                      ? 'md:tw-stroke-[--colorText]'
-                      : 'md:tw-stroke-[white]'
-                  }  hover:tw-stroke-primary tw-transition-all tw-duration-300 md:tw-block tw-ease-linear tw-stroke-[black]  ${
-                    isHandleOpenNavbar && 'tw-hidden'
-                  }`}
+                  className={clsx(
+                    `tw-mr-1 hover:tw-stroke-[--colorPrimary] tw-transition-all tw-duration-300 md:tw-block tw-ease-linear tw-stroke-[--colorText]`,
+                    {
+                      'tw-hidden': isHandleOpenNavbar,
+                      'md:tw-stroke-[white]': showBackground === false,
+                    }
+                  )}
                 />
               </>
             </div>
 
             {/* Search Input */}
             <div
-              className={`tw-top-16 md:tw-top-24 tw-absolute tw-border-0 tw-bg-[white] tw-w-full tw-right-0 tw-transition-all tw-duration-300 tw-ease-linear ${
-                showSearchInput
-                  ? 'md:tw-h-20 tw-h-16 tw-border-t-[1px]  tw-border-solid tw-border-t-[#a4a4a4] '
-                  : 'tw-h-0'
-              } tw-overflow-hidden`}
+              className={clsx(
+                `tw-top-16 md:tw-top-24 tw-absolute tw-border-0 tw-bg-[white] tw-w-full tw-right-0 tw-transition-all tw-duration-300 tw-ease-linear tw-overflow-hidden tw-h-0`,
+                {
+                  'md:tw-h-20 tw-h-16 tw-border-t-[1px]  tw-border-solid tw-border-t-[--colorBorder] ':
+                    showSearchInput,
+                }
+              )}
             >
               <form className="tw-flex tw-justify-between md:tw-justify-evenly tw-items-center tw-pt-3  md:tw-pt-4 xl:tw-px-52 md:tw-px-8 tw-px-4">
-                <div className="tw-flex tw-justify-between tw-items-end tw-px-5 tw-border-0 tw-pb-3 sm:tw-w-[289px]  md:tw-w-[600px] tw-border-b-[1px] tw-border-solid tw-border-b-[black]">
+                <div className="tw-flex tw-justify-between tw-items-end tw-px-5 tw-border-0 tw-pb-3 sm:tw-w-[289px]  md:tw-w-[600px] tw-border-b-[1px] tw-border-solid tw-border-b-[--colorText]">
                   <input
                     type="text"
                     className={`tw-outline-none tw-text-lg tw-border-0 ${styles.placeholder}`}

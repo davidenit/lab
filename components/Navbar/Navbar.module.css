@@ -1,6 +1,6 @@
 .underlineNavbar {
   position: relative;
-  padding: 0 2px;
+  padding: 0 0.125rem;
   width: fit-content;
 }
 
@@ -8,10 +8,10 @@
   position: absolute;
   content: '';
   width: -webkit-fill-available;
-  height: 2px;
-  background-color: red;
-  top: 40px;
-  right: 0px;
+  height: 0.125rem;
+  background-color: var(--colorError);
+  top: 2.5rem;
+  right: 0rem;
   display: none;
 }
 
@@ -34,19 +34,19 @@
 .home {
   background: url('../../app/assets/images/png/BGS-PAN-WEB-BAN-FA\ 1.png')
     center no-repeat;
-  height: 568px;
+  height: 35.5rem;
   background-size: cover;
 }
 
 .placeholder::placeholder {
-  color: black;
-  font-size: 18px;
+  color: var(--colorText);
+  font-size: 1.125rem;
   font-weight: 300;
 }
 
 .ImageHoverNavbar {
-  width: 668px;
-  height: 139px;
+  width: 41.75rem;
+  height: 8.6875rem;
 }
 
 .hoverChildNav {
@@ -57,21 +57,24 @@
 .hoverChildNav::after {
   position: absolute;
   content: '';
-  width: 1px;
+  width: 0.0625rem;
   height: 137%;
-  background-color: #a4a4a4;
+  background-color: var(--colorBorder);
   top: 0px;
   right: 0px;
 }
 
 .responParents {
-  border-top: 1px solid black;
+  border-top: 1px solid var(--colorText);
   display: none;
 }
 
-#SearchInput:checked ~ .divSearch {
-  max-height: 100%;
-  border-top: 1px solid #a4a4a4;
+.responRight {
+  display: none;
+}
+
+.hoverLitoShowResponRight:hover .responRight {
+  display: block;
 }
 
 @media (min-width: 769px) {
@@ -91,8 +94,8 @@
 
   .nav {
     position: fixed;
-    top: 100px;
-    height: 100%;
+    top: 6.25rem;
+    height: -webkit-fill-available;
     width: 100%;
     background-color: white;
     z-index: 10;
@@ -104,7 +107,7 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    padding-left: 24px;
+    padding-left: 1.5rem;
     margin-block: 0px;
   }
 
@@ -113,13 +116,12 @@
   }
 
   .nav .ul .liParents {
-    /* margin-top: 32px; */
-    font-size: 18px;
-    margin-right: 24px;
+    font-size: 1.125rem;
+    margin-right: 1.5rem;
   }
   .nav .ul li .underlineMobile {
-    padding-bottom: 8px;
-    border-bottom: 1px solid #000;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colorText);
     width: 100%;
   }
 
@@ -134,9 +136,9 @@
       no-repeat;
     background-size: contain;
     position: absolute;
-    width: 149px;
-    height: 40px;
-    margin-left: 20px;
+    width: 9.3125rem;
+    height: 2.5rem;
+    margin-left: 1.25rem;
   }
 }
 
@@ -150,14 +152,14 @@
   }
 
   .responRight {
-    right: -190%;
+    right: -215%;
   }
 
   .responParents {
-    right: -116px;
+    right: -7.25rem;
   }
 
   .linkNavbar {
-    margin-bottom: 110px;
+    margin-bottom: 6.875rem;
   }
 }
