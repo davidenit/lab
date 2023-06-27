@@ -4,15 +4,12 @@ import { Box } from '@mui/material';
 import clsx from 'clsx';
 import DescriptionAccordion from '../DescriptionAccordion';
 import ShippingAccordion from '../ShippingAccordion';
+import { Description, Shipping } from '../ProductDetailModal/ViewDetailProduct';
 
-interface DescriptionProps {
-  question: string;
-  answer: string;
-}
 interface DescriptionBoxProps {
-  description: DescriptionProps[];
-  delivery: any;
-  storePickUp: any;
+  description: Description[];
+  delivery: Shipping;
+  storePickUp: Shipping;
 }
 
 const DescriptionBox: FC<DescriptionBoxProps> = ({

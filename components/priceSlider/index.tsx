@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import Slider from '@mui/material/Slider';
 import { ChevrondownIcon } from '@/app/assets/images/svg/icons';
 import clsx from 'clsx';
@@ -17,7 +17,7 @@ const PriceSlider = ({}: priceSliderProps) => {
   };
 
   const customStyleSlider = {
-    color: '#FFFFFF',
+    color: 'var(--colorWhite)',
     padding: 0,
     '& .MuiSlider-thumb': {
       height: 20,
@@ -46,9 +46,9 @@ const PriceSlider = ({}: priceSliderProps) => {
   return (
     <Box sx={{ width: '256px' }}>
       <Box className="tw-flex tw-justify-between tw-items-center">
-        <Typography id="range-slider" className="text">
+        <p id="range-slider" className="text tw-mb-0">
           Price Range
-        </Typography>
+        </p>
         <Box>
           <ChevrondownIcon
             className={clsx({ 'tw-rotate-180': isShowed }, 'tw-cursor-pointer')}
@@ -72,10 +72,14 @@ const PriceSlider = ({}: priceSliderProps) => {
           />
           <Box className="tw-flex tw-justify-between tw-mt-4">
             <Box className={clsx(styles.priceWrapper)}>
-              <p className="tw-w-[60px] tw-m-0"> {value[0].toFixed(2)} SGD</p>
+              <p className="tw-w-[60px] text tw-m-0">
+                {value[0].toFixed(2)} SGD
+              </p>
             </Box>
             <Box className={clsx(styles.priceWrapper)}>
-              <p className="tw-w-[60px] tw-m-0"> {value[1].toFixed(2)} SGD</p>
+              <p className="tw-w-[60px] text tw-m-0">
+                {value[1].toFixed(2)} SGD
+              </p>
             </Box>
           </Box>
         </Box>

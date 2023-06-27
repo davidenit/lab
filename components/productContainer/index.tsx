@@ -1,6 +1,6 @@
 'use client';
 import React, { FC, useState } from 'react';
-import { Button, Box, Typography } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import ProductPrice from '@/components/ProductPrice';
 import {
   WishlistHeartIcon,
@@ -26,6 +26,9 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  //function to add wishlist, use later
+
   // const ADD_TO_WISHLIST_MUTATION = gql`
   //   mutation AddToWishlist($productId: ID!) {
   //     addToWishlist(productId: $productId) {
@@ -43,13 +46,13 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
   // };
   return (
     <Box
-      className="tw-mt-5 tw-flex tw-flex-col tw-rounded-lg tw-bg-[#fff] tw-box-border tw-p-[2px] tw-relative"
+      className="tw-mt-5 tw-flex tw-flex-col tw-rounded-lg tw-bg-white tw-box-border tw-p-[2px] tw-relative"
       sx={{
-        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.15)',
+        boxShadow: '0px 4px 10px var(--colorBoxShadow)',
       }}
     >
       <Box
-        className="tw-rounded-t-lg tw-overflow-hidden "
+        className="tw-rounded-t-lg tw-overflow-hidden"
         height={250}
         width={250}
       >
@@ -63,11 +66,11 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
         />
       </Box>
       <Box className="tw-flex tw-justify-between tw-mt-2 tw-mx-4">
-        <Typography className="tw-m-0 tw-text-sm">Talam Ubi</Typography>
+        <p className="tw-m-0 tw-text-sm">Talam Ubi</p>
         <DocumentSearchIcon
           onClick={handleOpen}
           fontSize={24}
-          className="tw-cursor-pointer hover:tw-stroke-primary tw-stroke-[#7e7e7e] tw-stroke-2"
+          className="tw-cursor-pointer hover:tw-stroke-primary tw-stroke-grey tw-stroke-2"
         />
         <Modal
           open={open}
@@ -79,23 +82,28 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
           <ProductDetailModal handleClose={handleClose} />
         </Modal>
       </Box>
-      <ProductPrice price={28.8} discount={32.8} className="notification" />
+      <ProductPrice
+        price={28.8}
+        discount={32.8}
+        className="notification"
+        classNamePrice="notification"
+        classNameDiscount="text-small"
+      />
       <Button
         variant="contained"
-        className="tw-flex tw-box-border tw-group !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] tw-text-sm tw-rounded tw-self-center "
+        className="tw-flex tw-box-border tw-group !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] notification !tw-font-450 tw-rounded tw-self-center "
         sx={{
           width: 'calc(100% - 16px)',
           outline: '2px solid var(--colorPrimary)',
-          fontWeight: 450,
           '&:hover': {
-            backgroundColor: '#fff',
+            backgroundColor: 'var(--colorWhite)',
             color: 'var(--colorPrimary)',
             boxShadow: 'none',
           },
         }}
       >
         ADD
-        <PlusIcon className="tw-stroke-[#fff] group-hover:tw-stroke-primary" />
+        <PlusIcon className="tw-stroke-white group-hover:tw-stroke-primary" />
       </Button>
     </Box>
   );

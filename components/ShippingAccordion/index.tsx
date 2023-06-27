@@ -1,8 +1,6 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import {
-  Button,
   Box,
-  Typography,
   Accordion,
   AccordionDetails,
   AccordionSummary,
@@ -30,17 +28,13 @@ const ShippingAccordion: FC<ShippingAccordionProps> = ({
     <Accordion
       expanded={expanded === panel}
       onChange={handleChange(panel)}
-      sx={{
-        boxShadow: 'none',
-        margin: '0!important',
-      }}
+      className="tw-shadow-none !tw-m-0"
     >
       <AccordionSummary
         expandIcon={expanded === panel ? <MinusIcon /> : <PlusIcon />}
         aria-controls="panel2bh-content"
         id="panel2bh-header"
         sx={{
-          margin: '0!important',
           borderBottom: '1px solid var(--colorBorder)',
           '& .Mui-expanded': {
             minHeight: '0px!important',
@@ -51,25 +45,20 @@ const ShippingAccordion: FC<ShippingAccordionProps> = ({
       >
         {nameAccordion}
       </AccordionSummary>
-      <AccordionDetails
-        sx={{
-          paddingTop: '0px!important',
-          paddingBottom: '0px!important',
-        }}
-      >
-        <Box className="tw-mt-3">
+      <AccordionDetails className="!tw-py-0">
+        <Box className="">
           <Box className="tw-flex">
-            <Typography className=" tw-text-text notification !tw-font-390">
+            <p className=" tw-text-text notification tw-mb-0 tw-mt-4 !tw-font-390">
               {shipping.availableDay?.title}
-            </Typography>
-            <Typography className=" tw-text-text notification">
+            </p>
+            <p className=" tw-text-text tw-mb-0 tw-mt-4 notification">
               {shipping.availableDay?.amount}
-            </Typography>
+            </p>
           </Box>
           <Box className="tw-mt-4">
-            <Typography className=" tw-text-text notification !tw-font-390">
+            <p className=" tw-text-text notification tw-mb-0 tw-mt-4 !tw-font-390">
               {shipping.availableTime.title}
-            </Typography>
+            </p>
             <ul>
               {shipping.availableTime.timeslot.map((time: string) => (
                 <li key={time} className="tw-text-text notification">

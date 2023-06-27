@@ -1,6 +1,6 @@
 'use client';
 import { FC } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import clsx from 'clsx';
 
 interface AttributeTitleProps {
@@ -25,16 +25,16 @@ const AttributeTitle: FC<AttributeTitleProps> = ({
         borderBottom: '1px solid var(--colorBorder)',
       }}
     >
-      <Typography className={clsx('tw-font-[420] text')}>
+      <p className={clsx('!tw-font-[420] text tw-mb-0')}>
         {filterValue || filterType}
-      </Typography>
+      </p>
       {filterValue !== '' && chips && (
-        <Typography
+        <p
           onClick={handleChangeFilter}
-          className="tw-text-primary hover:tw-underline hover:tw-cursor-pointer text"
+          className="tw-text-primary hover:tw-underline hover:tw-cursor-pointer text tw-mb-0"
         >
           Change
-        </Typography>
+        </p>
       )}
     </Box>
   );

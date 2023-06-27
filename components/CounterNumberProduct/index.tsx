@@ -16,6 +16,13 @@ const CounterNumberProduct: FC<CounterNumberProductProps> = ({}) => {
         className="tw-rounded-sm tw-border-[1px]"
         sx={{
           border: '1px solid var(--colorBorder)',
+          '& .MuiButtonBase-root': {
+            border: 'none!important',
+            '&:hover': {
+              border: 'none',
+              backgroundColor: 'transparent',
+            },
+          },
         }}
       >
         <Button
@@ -24,21 +31,11 @@ const CounterNumberProduct: FC<CounterNumberProductProps> = ({}) => {
             setCounter(counter - 1);
           }}
           className="!tw-py-[10px] !tw-px-[15px]"
-          sx={{
-            border: 'none!important',
-            '&:hover': { border: 'none', backgroundColor: 'transparent' },
-          }}
         >
           <MinusIcon fontSize={20} />
         </Button>
         {
-          <Button
-            className="body1 tw-w-[20px] !tw-py-[10px] !tw-px-[15px] !tw-text-text"
-            sx={{
-              border: 'none!important',
-              '&:hover': { border: 'none', backgroundColor: 'transparent' },
-            }}
-          >
+          <Button className="text tw-w-[20px] !tw-py-[10px] !tw-px-[15px] !tw-text-text">
             {counter}
           </Button>
         }
@@ -49,10 +46,6 @@ const CounterNumberProduct: FC<CounterNumberProductProps> = ({}) => {
               setCounter(counter + 1);
             }}
             className="tw-p-[6px] !tw-py-[10px] !tw-px-[15px]"
-            sx={{
-              border: 'none!important',
-              '&:hover': { border: 'none', backgroundColor: 'transparent' },
-            }}
           >
             <PlusIcon fontSize={20} />
           </Button>

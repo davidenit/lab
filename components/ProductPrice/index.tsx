@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import clsx from 'clsx';
 
 interface ProductPriceProps {
@@ -10,25 +10,26 @@ interface ProductPriceProps {
   classNameDiscount?: string;
 }
 
-const ProductPrice: FC<ProductPriceProps> = (props: ProductPriceProps) => {
-  const { price, discount, className, classNamePrice, classNameDiscount } =
-    props;
+const ProductPrice: FC<ProductPriceProps> = ({
+  price,
+  discount,
+  className,
+  classNamePrice,
+  classNameDiscount,
+}) => {
   return (
     <Box className={clsx('tw-flex tw-mt-[23px] tw-mx-4', className)}>
-      <Typography className={clsx('tw-m-0', classNamePrice)}>
+      <p className={clsx('tw-m-0', classNamePrice)}>
         {price.toFixed(2)} <span>SGD</span>
-      </Typography>
-      <Typography
+      </p>
+      <p
         className={clsx(
-          'tw-m-0 tw-line-through !tw-text-[0.625rem] !tw-ml-2 tw-self-end',
+          'tw-m-0 tw-line-through tw-ml-2 tw-self-end tw-text-grey',
           classNameDiscount
         )}
-        sx={{
-          color: 'var(--colorTextPlaceholder)',
-        }}
       >
         {discount?.toFixed(2)} <span>SGD</span>
-      </Typography>
+      </p>
     </Box>
   );
 };

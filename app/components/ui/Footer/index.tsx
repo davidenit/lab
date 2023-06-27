@@ -64,7 +64,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="tw-border tw-mt-8 tw-border-[#FFFF] tw-w-full tw-border-solid md:tw-mt-12" />
+        <div className="tw-border tw-mt-8 tw-border-white tw-w-full tw-border-solid md:tw-mt-12" />
         <div className="tw-mt-6 tw-text-sm tw-font-normal tw-leading-4 tw-text-center md:tw-mt-4 md:tw-text-end">
           Copyright © 2021 Bengawan Solo Pte Ltd All Rights Reserved
         </div>
