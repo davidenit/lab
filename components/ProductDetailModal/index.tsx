@@ -50,7 +50,7 @@ const ProductDetailModal: FC<ProductDetailModalProps> = ({ handleClose }) => {
     >
       <Box
         className={clsx(
-          'tw-bg-[#fff] tw-w-full tw-h-full tw-rounded-md tw-box-border tw-relative tw-flex tw-gap-10 tw-overflow-y-auto',
+          'tw-bg-[#fff] tw-w-full tw-h-full tw-box-border tw-relative tw-flex tw-gap-10 tw-overflow-y-auto',
           styles.scrollBar
         )}
       >

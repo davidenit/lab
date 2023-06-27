@@ -97,12 +97,12 @@ const ProductPage: FC = () => {
       <Container
         maxWidth="lg"
         className={clsx(
-          'tw-bg-[#fff] tw-rounded-md sm:tw-px-1 tw-py-4 !tw-px-1 tw-box-border tw-relative tw-flex tw-gap-10'
+          'tw-bg-[#fff] sm:tw-px-1 tw-py-4 !tw-px-1 tw-box-border tw-relative tw-flex tw-gap-10'
         )}
       >
         <Box
           className={clsx(
-            'tw-bg-[#fff] tw-w-full tw-h-full tw-rounded-md tw-box-border tw-relative tw-flex tw-gap-10 tw-overflow-y-auto'
+            'tw-bg-[#fff] tw-w-full tw-h-full tw-box-border tw-relative tw-flex tw-gap-10 tw-overflow-y-auto'
           )}
         >
           <div className="tw-flex md:tw-flex-row tw-flex-col tw-gap-10">
