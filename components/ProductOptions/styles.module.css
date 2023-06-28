@@ -1,0 +1,17 @@
+.select .MuiOutlinedInput-input {
+  padding: 13px 0px;
+  color: var(--colorTextPlaceholder);
+}
+.select .MuiOutlinedInput-notchedOutline {
+  border-color: var(--colorBorder);
+  color: var(--colorText);
+}
+.select .MuiSelect-iconOutlined {
+  margin-right: 10px;
+}
+.select .MuiOutlinedInput-notchedOutline:hover,
+.select:has(div[aria-expanded='true']) .MuiOutlinedInput-notchedOutline,
+.select:has(div[aria-expanded='false']) .MuiOutlinedInput-notchedOutline {
+  border-color: var(--colorBorder);
+  border-width: 1px;
+}

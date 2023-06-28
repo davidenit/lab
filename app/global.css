@@ -14,14 +14,22 @@
     url('/fonts/Brandon_Grotesque/Brandon_reg.otf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Philosopher';
+  src: local('Philosopher-Regular'),
+    url('/fonts/Philosopher/Philosopher-Regular.ttf') format('truetype');
+}
+
 body,
 html {
   font-family: 'Brandon', sans-serif;
+  color: var(--colorText);
 }
 
 :root {
   --colorPrimary: #e03155;
   --colorText: #191817;
+  --colorWhite: '#FFFFFF';
   --colorBorder: #a4a4a4;
   --colorPrimaryHover: #375eab;
   --colorTextPlaceholder: #7e7e7e;
@@ -32,6 +40,8 @@ html {
   --colorTagBg: #f3ccc5;
   --colorBgDefault: #f5f4f3;
   --colorLink: #375eab;
+  --colorBorderChip: #c6cfe7;
+  --colorBoxShadow: rgba(0, 0, 0, 0.15);
 }
 
 .ant-select-selector {
@@ -70,6 +80,13 @@ html {
   line-height: 120% !important;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 .heading1 {
   font-style: normal;
   font-weight: 400;
@@ -79,6 +96,7 @@ html {
   /* identical to box height, or 40px */
 
   letter-spacing: 0.02em;
+  font-family: 'Philosopher', sans-serif;
 }
 
 .heading2 {
@@ -92,6 +110,16 @@ html {
   letter-spacing: 0.02em;
 }
 
+.heading3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  /*24px*/
+  line-height: 120%;
+  /* identical to box height, or 48px */
+
+  letter-spacing: 0.02em;
+}
 .body1 {
   font-style: normal;
   font-weight: 390;
@@ -100,7 +128,7 @@ html {
   line-height: 120%;
   /* identical to box height, or 48px */
 
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em; /*0.32px*/
 }
 
 .body2 {
@@ -111,7 +139,7 @@ html {
   line-height: 120%;
   /* identical to box height, or 48px */
 
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em; /*0.32px*/
 }
 
 .text {
@@ -122,7 +150,7 @@ html {
   line-height: 120%;
   /* identical to box height, or 48px */
 
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em; /*0.32px*/
 }
 
 .notification {
@@ -133,7 +161,53 @@ html {
   line-height: 120%;
   /* identical to box height, or 48px */
 
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em; /*0.32px*/
+}
+
+/* Customize Table */
+.MuiTableContainer-root {
+  border: 1px solid var(--colorBorder);
+  padding: 15px 24px;
+  border-radius: 8px;
+}
+
+.MuiTableHead-root > .MuiTableRow-head > .MuiTableCell-root {
+  @apply tw-capitalize tw-text-base tw-text-text;
+  line-height: 120%;
+  font-weight: 420;
+  letter-spacing: 0.02em; /*0.32px*/
+}
+
+.MuiTableBody-root > .MuiTableRow-root > .MuiTableCell-root {
+  @apply tw-text-[0.875rem] tw-text-text;
+  line-height: 120%;
+  font-weight: 390;
+  letter-spacing: 0.02em; /*0.32px*/
+}
+
+.MuiTableHead-root > .MuiTableRow-head > .MuiTableCell-root:first-child,
+.MuiTableBody-root > .MuiTableRow-root > .MuiTableCell-root:first-child {
+  padding-left: 0;
+}
+
+.MuiTableHead-root > .MuiTableRow-head > .MuiTableCell-root:last-child,
+.MuiTableBody-root > .MuiTableRow-root > .MuiTableCell-root:last-child {
+  padding-right: 0;
+}
+/* ---------------- END Customize Table */
+
+.text-small {
+  font-size: 0.625rem;
+  font-weight: 390;
+  line-height: 12px;
+  letter-spacing: 2%;
+}
+
+.text-small {
+  font-size: 0.625rem;
+  font-weight: 390;
+  line-height: 12px;
+  letter-spacing: 2%;
 }
 
 @media screen and (max-width: 480px) {
@@ -147,6 +221,11 @@ html {
     /*24px*/
   }
 
+  .heading3 {
+    font-size: 1.125rem;
+    /*18px*/
+  }
+
   .body1 {
     font-size: 1rem;
     /*16px*/
@@ -157,7 +236,8 @@ html {
     /*14px*/
   }
 
-  .notification {
+  .notification,
+  .text {
     font-size: 0.75rem;
     /*12px*/
   }

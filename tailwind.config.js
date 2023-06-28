@@ -8,12 +8,30 @@ module.exports = {
   ],
   theme: {
     colors: {
+      default: '#191817',
       primary: '#E03155',
       text: '#191817',
       border: '#A4A4A4',
-      black: '#191817',
+      grey: '#7E7E7E',
+      white: '#ffffff',
+      tagBackground: '#F3CCC5',
+      lightGrey: '#F5F4F3',
     },
-    extend: {},
+    borderColor: '#A4A4A4',
+    placeholderColor: '#7E7E7E',
+    extend: {
+      fontWeight: {
+        330: 330,
+        390: 390,
+      },
+      colors: {
+        placeholderColor: '#7E7E7E',
+      },
+    },
+    fontFamily: {
+      default: ['"Brandon"', 'sans-serif'],
+      philosopher: ['"Philosopher"', 'sans-serif'],
+    },
   },
   plugins: [],
   corePlugins: {

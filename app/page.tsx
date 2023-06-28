@@ -3,6 +3,8 @@ import { Box, Button, Grid } from '@mui/material';
 import Image from 'next/image';
 import Search from './assets/images/svg/Search.svg';
 import { SearchIcon } from './assets/images/svg/icons';
+import PriceSlider from '../components/PriceSlider';
+import ProductContainer from '../components/ProductContainer';
 import BasicDatePicker from './components/ui/DatePicker';
 import { CustomizedSteppers } from './components/ui/CustomeStepper';
 import YouTube, { YouTubeProps } from 'react-youtube';
@@ -37,6 +39,26 @@ export default function Home() {
         direction="column"
       >
         <h1>Using Material UI with Next.js 13 and Tailwind</h1>
+        {/* <h1>Using Material UI with Next.js 13 and Tailwind</h1>
+        <Box>
+          <Image src={Search} alt="Search" height={24} width={24} />
+          <SearchIcon fontSize={24} />
+        </Box>
+        <Box className="tw-grid tw-grid-cols-3 tw-gap-2">
+          <Button variant="text">Text</Button>
+          <Button variant="contained" size="large" className="tw-uppercase">
+            create account
+          </Button>
+          <Button variant="outlined" size="large" className="tw-uppercase">
+            continue as guest
+          </Button>
+        </Box>
+        <BasicDatePicker />
+        <CustomizedSteppers />
+        <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} /> */}
+        {/* <CustomeNumberInput /> */}
+        <PriceSlider />
+        <ProductContainer />
       </Grid>
       <div className="tw-mx-14">
         <CustomeSwiper
