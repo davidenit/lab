@@ -49,7 +49,7 @@ export default function Home() {
         <BasicDatePicker />
         <CustomizedSteppers />
         <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} />
-        <CustomeNumberInput />
+        {/* <CustomeNumberInput  /> */}
       </Grid>
       <Footer />
     </>
