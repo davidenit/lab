@@ -13,9 +13,9 @@ export const SearchIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
         stroke="#191817"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -63,8 +63,8 @@ export const DocumentSearchIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M10 21H17C18.1046 21 19 20.1046 19 19V9.41421C19 9.149 18.8946 8.89464 18.7071 8.70711L13.2929 3.29289C13.1054 3.10536 12.851 3 12.5858 3H7C5.89543 3 5 3.89543 5 5V16M5 21L9.87868 16.1213M9.87868 16.1213C10.4216 16.6642 11.1716 17 12 17C13.6569 17 15 15.6569 15 14C15 12.3431 13.6569 11 12 11C10.3431 11 9 12.3431 9 14C9 14.8284 9.33579 15.5784 9.87868 16.1213Z"
         stroke="#191817"
-        stroke-width="1.2"
-        stroke-linecap="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
       />
     </svg>
   );
@@ -126,15 +126,15 @@ export const UserMediumIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -153,9 +153,9 @@ export const XCicleIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M10 14L12 12M12 12L14 10M12 12L10 10M12 12L14 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
         stroke="#E03155"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -200,9 +200,9 @@ export const BookIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -279,9 +279,9 @@ export const HeartIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M4.31802 6.31802C2.56066 8.07538 2.56066 10.9246 4.31802 12.682L12.0001 20.364L19.682 12.682C21.4393 10.9246 21.4393 8.07538 19.682 6.31802C17.9246 4.56066 15.0754 4.56066 13.318 6.31802L12.0001 7.63609L10.682 6.31802C8.92462 4.56066 6.07538 4.56066 4.31802 6.31802Z"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -336,9 +336,9 @@ export const SearchMediumIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
         stroke="#191817"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -357,9 +357,9 @@ export const CheckCircleIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
         stroke="#2DB763"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -396,9 +396,9 @@ export const AlertCircleOutlineIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
         stroke="#F47D23"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -478,9 +478,9 @@ export const CreaditCardIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M3 10H21M7 15H8M12 15H13M6 19H18C19.6569 19 21 17.6569 21 16V8C21 6.34315 19.6569 5 18 5H6C4.34315 5 3 6.34315 3 8V16C3 17.6569 4.34315 19 6 19Z"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -553,9 +553,9 @@ export const PlusIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M13.992 7V14M13.992 14V21M13.992 14H20.7878M13.992 14L7.19629 14"
         stroke="#191817"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -574,9 +574,9 @@ export const MinusIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M21.2705 14H7.67896"
         stroke="#191817"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -635,9 +635,9 @@ export const ChevrondownIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M15.8334 7.5L10.0001 13.3333L4.16675 7.5"
         stroke="#191817"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -712,13 +712,13 @@ export const NaviIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <circle cx="15" cy="15" r="14" stroke="#E03155" stroke-width="2" />
+      <circle cx="15" cy="15" r="14" stroke="#E03155" strokeWidth="2" />
       <path
         d="M12 22L19 15L12 8"
         stroke="#E03155"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -755,9 +755,9 @@ export const BookMediumIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       <path
         d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528"
         stroke="#191817"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -794,9 +794,9 @@ export const MailOpenIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M3 19V10.0704C3 9.40165 3.3342 8.77718 3.8906 8.40625L10.8906 3.73959C11.5624 3.29172 12.4376 3.29172 13.1094 3.73959L20.1094 8.40625C20.6658 8.77718 21 9.40165 21 10.0704V19M3 19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19M3 19L9.75 14.5M21 19L14.25 14.5M3 9.99999L9.75 14.5M21 9.99999L14.25 14.5M14.25 14.5L13.1094 15.2604C12.4376 15.7083 11.5624 15.7083 10.8906 15.2604L9.75 14.5"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -921,8 +921,8 @@ export const ShopingBagIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11M5 9H19L20 21H4L5 9Z"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

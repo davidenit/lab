@@ -8,9 +8,9 @@ interface IMyProfileLayout extends PropsWithChildren {}
 const MyProfileLayout: FC<IMyProfileLayout> = (props) => {
   return (
     <Container>
-      <Box className="tw-flex tw-justify-start tw-gap-[32px] tw-w-full tw-pt-[80px] tw-pb-[6opx]">
+      <Box className="tw-flex tw-flex-1 tw-justify-start tw-gap-[32px] tw-w-full tw-pt-[80px] tw-pb-[6opx]">
         <SideBar />
-        <Box className="tw-p-4">{props.children}</Box>
+        {props.children}
       </Box>
     </Container>
   );

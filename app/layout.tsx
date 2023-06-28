@@ -20,12 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <QueryClientProvider client={queryClient}>
-          <ThemeProvider theme={darkTheme}>
-            <CacheProvider value={clientSideEmotionCache}>
+          <CacheProvider value={clientSideEmotionCache}>
+            <ThemeProvider theme={darkTheme}>
               <CssBaseline />
               {children}
-            </CacheProvider>
-          </ThemeProvider>
+            </ThemeProvider>
+          </CacheProvider>
         </QueryClientProvider>
       </body>
     </html>
