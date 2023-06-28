@@ -3,8 +3,6 @@ import { Box, Button, Grid } from '@mui/material';
 import Image from 'next/image';
 import Search from './assets/images/svg/Search.svg';
 import { SearchIcon } from './assets/images/svg/icons';
-import PriceSlider from '../components/PriceSlider';
-import ProductContainer from '../components/ProductContainer';
 import BasicDatePicker from './components/ui/DatePicker';
 import { CustomizedSteppers } from './components/ui/CustomeStepper';
 import YouTube, { YouTubeProps } from 'react-youtube';
@@ -20,6 +18,7 @@ import CustomeSwiper, {
   Swiper as SwiperType,
 } from './components/ui/Swiper';
 import { SWIPER_BREAKPOINT } from './components/ui/helper';
+import Navbar from '@/components/Navbar/Navbar';
 
 export default function Home() {
   const test = <div className="tw-w-64 tw-h-64 tw-bg-primary"></div>;
@@ -31,6 +30,9 @@ export default function Home() {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   return (
     <>
+      <div>
+        <Navbar />
+      </div>
       <Grid
         container
         height="100vh"
@@ -39,7 +41,6 @@ export default function Home() {
         direction="column"
       >
         <h1>Using Material UI with Next.js 13 and Tailwind</h1>
-        {/* <h1>Using Material UI with Next.js 13 and Tailwind</h1>
         <Box>
           <Image src={Search} alt="Search" height={24} width={24} />
           <SearchIcon fontSize={24} />
@@ -55,10 +56,6 @@ export default function Home() {
         </Box>
         <BasicDatePicker />
         <CustomizedSteppers />
-        <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} /> */}
-        {/* <CustomeNumberInput /> */}
-        <PriceSlider />
-        <ProductContainer />
       </Grid>
       <div className="tw-mx-14">
         <CustomeSwiper
