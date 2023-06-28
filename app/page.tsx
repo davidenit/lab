@@ -1,4 +1,5 @@
 'use client';
+import Filter from '@/components/product-list/Filter';
 import { Box, Button, Grid } from '@mui/material';
 import Image from 'next/image';
 import Search from './assets/images/svg/Search.svg';
@@ -12,19 +13,6 @@ import CustomeNumberInput from './components/ui/CustomeNumberInput';
 import Footer from './components/ui/Footer';
 
 export default function Home() {
-  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  };
-
-  const opts: YouTubeProps['opts'] = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
   return (
     <>
       <Grid
