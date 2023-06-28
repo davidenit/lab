@@ -1,12 +1,7 @@
 'use client';
 
 import React from 'react';
-import {
-  useForm,
-  SubmitHandler,
-  UseFormRegisterReturn,
-  FieldErrors,
-} from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import Input from './Input';
 import { Button } from '@mui/material';
 import {
@@ -37,7 +32,7 @@ const LoginForm = () => {
   console.log('password', password);
 
   return (
-    <div className="tw-py-10 tw-px-12 tw-max-w-[544px] tw-border-solid tw-border-[#A4A4A4] tw-border-[1.5px] tw-rounded-lg">
+    <div className="tw-py-10 tw-px-12 tw-max-w-[544px] tw-border-solid tw-border-border tw-border-[1.5px] tw-rounded-lg">
       <h1 className="tw-m-0">Please login to continue</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="tw-grid tw-pt-6">
         <div className="tw-grid tw-gap-6">

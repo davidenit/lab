@@ -1,4 +1,5 @@
 'use client';
+import Filter from '@/components/product-list/Filter';
 import { Box, Button, Grid } from '@mui/material';
 import Image from 'next/image';
 import Search from './assets/images/svg/Search.svg';

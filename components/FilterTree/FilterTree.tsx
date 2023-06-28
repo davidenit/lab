@@ -1,17 +1,28 @@
 'use client';
 
 import { Checkbox } from '@mui/material';
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState, useEffect } from 'react';
+import {
+  findItem,
+  findParents,
+  flattenedChildNodeValue,
+} from './checkbox-tree-helpers';
 
-interface Node {
+export interface Node {
   value: string;
   label: string;
   children?: Node[];
 }
 
-interface filterTreeProps {
+interface FilterBranchProps {
   nodes: Node[];
   parentChecked?: boolean;
+}
+
+interface FilterTreeProps<T> {
+  nodes: T[];
+  initialCheckedList?: string[];
+  onChecked: (checkedList: string[]) => void;
 }
 
 interface TreeContext {
@@ -26,35 +37,12 @@ const filterTreeContext = createContext<TreeContext>({
   },
 });
 
-const nodes = [
-  {
-    value: 'mars',
-    label: 'Mars',
-    children: [
-      { value: 'phobos', label: 'Phobos' },
-      { value: 'deimos', label: 'Deimos' },
-    ],
-  },
-  {
-    value: 'earth',
-    label: 'Earth',
-    children: [
-      {
-        value: 'USA',
-        label: 'USA',
-        children: [
-          { value: 'newyork', label: 'New' },
-          { value: 'sanfran', label: 'San' },
-          { value: 'cali', label: 'California' },
-        ],
-      },
-      { value: 'China', label: 'China' },
-    ],
-  },
-];
-
-const ProductListPage = () => {
-  const [checkedList, setCheckedList] = useState(['USA', 'newyork', 'sanfran']);
+const FilterTree = <T extends Node>({
+  nodes,
+  onChecked,
+  initialCheckedList,
+}: FilterTreeProps<T>) => {
+  const [checkedList, setCheckedList] = useState(initialCheckedList || []);
 
   const onFilterClick = (nodeValue: string) => {
     const node = findItem(nodes, nodeValue);
@@ -113,26 +101,24 @@ const ProductListPage = () => {
     });
   };
 
+  useEffect(() => {
+    console.log('checkedList', checkedList);
+    onChecked(checkedList);
+  }, [checkedList]);
+
   return (
     <div>
       <filterTreeContext.Provider
         value={{ checkedNodesValue: checkedList, onFilterNodes: onFilterClick }}
       >
-        <FilterTree nodes={nodes} />
-        <ProductList />
+        <FilterBranch nodes={nodes} />
       </filterTreeContext.Provider>
     </div>
   );
 };
-export default ProductListPage;
+export default FilterTree;
 
-const ProductList = () => {
-  const { checkedNodesValue } = useContext(filterTreeContext);
-
-  return <>{checkedNodesValue.toString()}</>;
-};
-
-const FilterTree = ({ nodes }: filterTreeProps) => {
+const FilterBranch = ({ nodes }: FilterBranchProps) => {
   return (
     <ul className="tw-list-none tw-p-0">
       {nodes.map((node) => (
@@ -140,78 +126,6 @@ const FilterTree = ({ nodes }: filterTreeProps) => {
       ))}
     </ul>
   );
-};
-
-const flattenedChildNodeValue = (node: Node) => {
-  if (node.children === undefined) return [];
-
-  let flattenNode: string[] =
-    [...node.children.map((child) => child.value)] || [];
-
-  node.children.forEach(
-    (child) =>
-      (flattenNode = [...flattenNode, ...flattenedChildNodeValue(child)])
-  );
-
-  return flattenNode;
-};
-
-const findItem = (items: Node[], targetId: string): Node | undefined => {
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
-    if (item.value === targetId) {
-      return item;
-    }
-    if (item.children) {
-      const found = findItem(item.children, targetId);
-      if (found) {
-        return found;
-      }
-    }
-  }
-};
-
-const findParents = (
-  tree: Node[],
-  targetValue: string,
-  parents: string[] = [],
-  checkedList: string[],
-  lastUncheckedChildren: [string, string][] = []
-):
-  | { parents: string[] | undefined; lastUncheckedChildren: [string, string][] }
-  | undefined => {
-  const haveOneUncheckedChild =
-    tree
-      .map((node) => node.value)
-      .filter((value) => !checkedList.includes(value)).length === 1;
-
-  for (const node of tree) {
-    if (
-      haveOneUncheckedChild &&
-      !checkedList.includes(node.value) &&
-      parents.length > 0
-    )
-      lastUncheckedChildren.push([node.value, parents.slice(-1)[0]]);
-
-    if (node.value === targetValue) {
-      return { parents, lastUncheckedChildren };
-    }
-
-    if (node.children) {
-      const foundParents = findParents(
-        node.children,
-        targetValue,
-        [...parents, node.value],
-        checkedList,
-        lastUncheckedChildren
-      );
-      if (foundParents) {
-        return foundParents;
-      }
-    }
-  }
-
-  return undefined;
 };
 
 const FilterNode = ({ node }: { node: Node }) => {
@@ -246,7 +160,7 @@ const FilterNode = ({ node }: { node: Node }) => {
         />
         <label onClick={() => setExpand((prev) => !prev)}>{label}</label>
       </span>
-      {children && expand && <FilterTree nodes={children} />}
+      {children && expand && <FilterBranch nodes={children} />}
     </li>
   );
 };

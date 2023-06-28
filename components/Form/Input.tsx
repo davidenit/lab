@@ -59,7 +59,7 @@ const Input: React.FC<InputProps> = ({
             {required && <span className="tw-text-primary">*</span>}
           </label>
           <input
-            className="tw-py-[14.5px] tw-px-4 tw-mt-2 tw-rounded-md tw-border-[1px] tw-border-[#A4A4A4] focus-visible:tw-outline-none"
+            className="tw-py-[14.5px] tw-px-4 tw-mt-2 tw-rounded-md tw-border-[1px] tw-border-border focus-visible:tw-outline-none"
             type={type}
             id={id}
             {...register}
