@@ -29,6 +29,7 @@ html {
 :root {
   --colorPrimary: #e03155;
   --colorText: #191817;
+  --colorWhite: '#FFFFFF';
   --colorBorder: #a4a4a4;
   --colorPrimaryHover: #375eab;
   --colorTextPlaceholder: #7e7e7e;
@@ -39,6 +40,8 @@ html {
   --colorTagBg: #f3ccc5;
   --colorBgDefault: #f5f4f3;
   --colorLink: #375eab;
+  --colorBorderChip: #c6cfe7;
+  --colorBoxShadow: rgba(0, 0, 0, 0.15);
 }
 
 .ant-select-selector {
@@ -105,9 +108,18 @@ p {
   /* identical to box height, or 48px */
 
   letter-spacing: 0.02em;
-  font-family: 'Philosopher', sans-serif;
 }
 
+.heading3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  /*24px*/
+  line-height: 120%;
+  /* identical to box height, or 48px */
+
+  letter-spacing: 0.02em;
+}
 .body1 {
   font-style: normal;
   font-weight: 390;
@@ -184,6 +196,20 @@ p {
 }
 /* ---------------- END Customize Table */
 
+.text-small {
+  font-size: 0.625rem;
+  font-weight: 390;
+  line-height: 12px;
+  letter-spacing: 2%;
+}
+
+.text-small {
+  font-size: 0.625rem;
+  font-weight: 390;
+  line-height: 12px;
+  letter-spacing: 2%;
+}
+
 @media screen and (max-width: 480px) {
   .heading1 {
     font-size: 1.75rem;
@@ -193,6 +219,11 @@ p {
   .heading2 {
     font-size: 1.5rem;
     /*24px*/
+  }
+
+  .heading3 {
+    font-size: 1.125rem;
+    /*18px*/
   }
 
   .body1 {
@@ -205,7 +236,8 @@ p {
     /*14px*/
   }
 
-  .notification {
+  .notification,
+  .text {
     font-size: 0.75rem;
     /*12px*/
   }

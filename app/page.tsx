@@ -3,6 +3,8 @@ import { Box, Button, Grid } from '@mui/material';
 import Image from 'next/image';
 import Search from './assets/images/svg/Search.svg';
 import { SearchIcon } from './assets/images/svg/icons';
+import PriceSlider from '../components/PriceSlider';
+import ProductContainer from '../components/ProductContainer';
 import BasicDatePicker from './components/ui/DatePicker';
 import { CustomizedSteppers } from './components/ui/CustomeStepper';
 import YouTube, { YouTubeProps } from 'react-youtube';
@@ -32,7 +34,7 @@ export default function Home() {
         justifyContent="center"
         direction="column"
       >
-        <h1>Using Material UI with Next.js 13 and Tailwind</h1>
+        {/* <h1>Using Material UI with Next.js 13 and Tailwind</h1>
         <Box>
           <Image src={Search} alt="Search" height={24} width={24} />
           <SearchIcon fontSize={24} />
@@ -48,8 +50,10 @@ export default function Home() {
         </Box>
         <BasicDatePicker />
         <CustomizedSteppers />
-        <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} />
-        {/* <CustomeNumberInput  /> */}
+        <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} /> */}
+        {/* <CustomeNumberInput /> */}
+        <PriceSlider />
+        <ProductContainer />
       </Grid>
       <Footer />
     </>

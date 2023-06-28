@@ -1,0 +1,12 @@
+.scrollBar::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background-color: var(--colorBorder);
+  border-radius: 5px;
+}
+.scrollBar {
+  overflow: auto;
+}

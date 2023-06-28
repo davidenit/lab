@@ -6,7 +6,7 @@ const Footer = () => {
   const { isMobileView } = useResize();
   return (
     <>
-      <div className="tw-bg-black tw-text-[#FFFF]">
+      <div className="tw-bg-black tw-text-white">
         <div className="tw-text-center md:tw-text-left md:tw-flex md:tw-flex-row-reverse md:tw-justify-between">
           <FooterLogo />
           <div className="tw-gap-8 tw-flex tw-flex-col tw-mt-10 md:tw-flex-row md:tw-mt-0 md:tw-gap-16">
@@ -64,7 +64,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="tw-border tw-mt-8 tw-border-[#FFFF] tw-w-full tw-border-solid md:tw-mt-12" />
+        <div className="tw-border tw-mt-8 tw-border-white tw-w-full tw-border-solid md:tw-mt-12" />
         <div className="tw-mt-6 tw-text-sm tw-font-normal tw-leading-4 tw-text-center md:tw-mt-4 md:tw-text-end">
           Copyright © 2021 Bengawan Solo Pte Ltd All Rights Reserved
         </div>
