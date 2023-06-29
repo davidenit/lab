@@ -2,19 +2,13 @@ import { FC } from 'react';
 import Image from 'next/image';
 import { Button } from '@mui/material';
 import { ClockIcon } from '@/app/assets/images/svg/icons';
-
+import { StoreInfor as Store } from '../StoreLocation';
 interface StoreInforProps {
   store: Store;
+  handlePickStore: (store: Store) => void;
 }
-interface Store {
-  name: string;
-  address: string;
-  zip: string;
-  city: string;
-  workingTime: string;
-  imageUrl: string;
-}
-const StoreInfor: FC<StoreInforProps> = ({ store }) => {
+
+const StoreInfor: FC<StoreInforProps> = ({ store, handlePickStore }) => {
   return (
     <div className="tw-flex tw-flex-col tw-gap-2">
       <div className="tw-flex tw-gap-6">
@@ -29,6 +23,7 @@ const StoreInfor: FC<StoreInforProps> = ({ store }) => {
           <Button
             className="tw-uppercase notification hover:!tw-bg-white hover:!tw-text-primary hover:!shadow-none"
             variant="contained"
+            onClick={() => handlePickStore(store)}
           >
             pick up here
           </Button>

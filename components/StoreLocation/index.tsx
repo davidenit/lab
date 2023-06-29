@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Button, Container, GlobalStyles } from '@mui/material';
 import { CloseIcon } from '@/app/assets/images/svg/icons';
 import clsx from 'clsx';
@@ -8,14 +8,16 @@ import OutlinedSelect from '../OutlinedSelect';
 import ProductOptions from '../ProductOptions';
 import StoreFilterAccordion from '../StoreFilterAccordion';
 import { stores } from '../../app/api/mockData';
-import { Map, Marker, GoogleApiWrapper } from 'google-map-react';
-interface StoreInfor {
+import GoogleMapStore from '../GoogleMapStore';
+export interface StoreInfor {
   name: string;
   address: string;
   zip: string;
   city: string;
   workingTime: string;
   imageUrl: string;
+  lat: number;
+  lng: number;
 }
 interface StoreLocationProps {
   handleClose?: () => void;
@@ -25,17 +27,10 @@ const StoreLocation: FC<StoreLocationProps> = ({ handleClose }) => {
   const options = ['10km', '20km', '30km'];
   const addresses: string[] = stores.map((store) => store.address);
   const addressOption = addresses.unshift('Everywhere');
-  const store = [
-    {
-      name: 'Causeway Point',
-      address: '1 Woodlands Square',
-      zip: '012345',
-      city: 'Singapore, Singapore SG',
-      workingTime: '10:00-20:00',
-      imageUrl:
-        'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
-    },
-  ];
+
+  const [pickedStore, setPickedStore] = useState<StoreInfor>(stores[0]);
+  console.log('🚀 ~ file: index.tsx:30 ~ pickedStore:', pickedStore);
+  const handlePickStore = (store: StoreInfor) => setPickedStore(store);
   return (
     <Container
       maxWidth="lg"
@@ -73,8 +68,12 @@ const StoreLocation: FC<StoreLocationProps> = ({ handleClose }) => {
         >
           locate nearby
         </Button>
-        <StoreFilterAccordion storeInfor={stores} />
+        <StoreFilterAccordion
+          storeInfor={stores}
+          handlePickStore={handlePickStore}
+        />
       </div>
+      <GoogleMapStore pickedStore={pickedStore} />
     </Container>
   );
 };

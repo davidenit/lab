@@ -4,22 +4,16 @@ import { PlusIcon, MinusIcon } from '@/app/assets/images/svg/icons';
 import StoreInfor from '../StoreInfor';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-
-interface Store {
-  name: string;
-  address: string;
-  zip: string;
-  city: string;
-  workingTime: string;
-  imageUrl: string;
-}
+import { StoreInfor as Store } from '../StoreLocation';
 
 interface StoreFilterAccordionProps {
   storeInfor: Store[];
+  handlePickStore: (store: Store) => void;
 }
 
 const StoreFilterAccordion: FC<StoreFilterAccordionProps> = ({
   storeInfor,
+  handlePickStore,
 }) => {
   const [expanded, setExpanded] = useState<string | false>(false);
   const handleChange =
@@ -54,7 +48,7 @@ const StoreFilterAccordion: FC<StoreFilterAccordionProps> = ({
       >
         {storeInfor.map((store, index) => (
           <div key={index}>
-            <StoreInfor store={store} />
+            <StoreInfor store={store} handlePickStore={handlePickStore} />
           </div>
         ))}
       </AccordionDetails>

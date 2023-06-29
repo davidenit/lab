@@ -79,6 +79,8 @@ export const stores = [
     workingTime: '10:00-20:00',
     imageUrl:
       'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+    lat: 1.436488,
+    lng: 103.785978,
   },
   {
     name: 'Sunplaza',
@@ -88,6 +90,8 @@ export const stores = [
     workingTime: '10:00-20:00',
     imageUrl:
       'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+    lat: 1.442225,
+    lng: 103.817512,
   },
   {
     name: 'White Sands',
@@ -97,6 +101,8 @@ export const stores = [
     workingTime: '10:00-20:00',
     imageUrl:
       'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+    lat: 1.372358,
+    lng: 103.949368,
   },
   {
     name: 'Northpoint',
@@ -106,5 +112,7 @@ export const stores = [
     workingTime: '10:00-20:00',
     imageUrl:
       'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+    lat: 1.417726,
+    lng: 103.837434,
   },
 ];
