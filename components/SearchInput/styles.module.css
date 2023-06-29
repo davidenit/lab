@@ -1,0 +1,6 @@
+.inputContainer:hover fieldset {
+  border-color: var(--colorBorder) !important;
+}
+.inputContainer fieldset {
+  border: 1px solid var(--colorBorder) !important;
+}

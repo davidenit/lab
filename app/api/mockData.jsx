@@ -69,3 +69,42 @@ export const productInfor = {
   priceDiscount: 35.8,
   tags: 'Cake, Signature Range',
 };
+
+export const stores = [
+  {
+    name: 'Causeway Point',
+    address: '1 Woodlands Square',
+    zip: '012345',
+    city: 'Singapore, Singapore SG',
+    workingTime: '10:00-20:00',
+    imageUrl:
+      'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+  },
+  {
+    name: 'Sunplaza',
+    address: '30 Sembawang Drive',
+    zip: '012345',
+    city: 'Singapore, Singapore SG',
+    workingTime: '10:00-20:00',
+    imageUrl:
+      'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+  },
+  {
+    name: 'White Sands',
+    address: 'Pasir Ris Central St 3',
+    zip: '012345',
+    city: 'Singapore, Singapore SG',
+    workingTime: '10:00-20:00',
+    imageUrl:
+      'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+  },
+  {
+    name: 'Northpoint',
+    address: '930 Yishun Ave 2',
+    zip: '012345',
+    city: 'Singapore, Singapore SG',
+    workingTime: '10:00-20:00',
+    imageUrl:
+      'https://bengawansolo.sg/media/mageplaza/store_locator/image/default/store2.jpg',
+  },
+];

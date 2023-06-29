@@ -10,8 +10,8 @@ import StepConnector, {
 } from '@mui/material/StepConnector';
 import { StepIconProps } from '@mui/material/StepIcon';
 import { useState } from 'react';
-import { Box, Button } from '@mui/material';
-
+import { Box, Button, Modal } from '@mui/material';
+import StoreLocation from '../../../../components/StoreLocation';
 const steps = ['Shipping', 'Review & Payments'];
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
@@ -61,9 +61,16 @@ const ColorlibStepIconRoot = styled('div')<{
 
 function ColorlibStepIcon(props: StepIconProps) {
   const { active, completed, className } = props;
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const icons: { [index: string]: React.ReactElement } = {
-    1: <LocalShippingOutlinedIcon />,
+    1: (
+      <LocalShippingOutlinedIcon
+        onClick={handleOpen}
+        className="tw-cursor-pointer"
+      />
+    ),
     2: <PaymentIcon />,
   };
 
@@ -72,6 +79,14 @@ function ColorlibStepIcon(props: StepIconProps) {
       ownerState={{ active, completed }}
       className={className}
     >
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <StoreLocation handleClose={handleClose} />
+      </Modal>
       {icons[String(props.icon)]}
     </ColorlibStepIconRoot>
   );
@@ -79,6 +94,7 @@ function ColorlibStepIcon(props: StepIconProps) {
 
 export const CustomizedSteppers = () => {
   const [activeStep, setActiveStep] = useState(0);
+
   const handleNext = () => {
     if (activeStep !== steps.length - 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);

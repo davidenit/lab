@@ -47,10 +47,10 @@ export default function Home() {
           <Button variant="outlined" size="large" className="tw-uppercase">
             continue as guest
           </Button>
-        </Box>
-        <BasicDatePicker />
+        </Box> */}
+        {/* <BasicDatePicker /> */}
         <CustomizedSteppers />
-        <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} /> */}
+        {/* <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} />  */}
         {/* <CustomeNumberInput /> */}
         <PriceSlider />
         <ProductContainer />

@@ -62,6 +62,7 @@ const ProductDetailModal: FC<ProductDetailModalProps> = ({ handleClose }) => {
                 key={selectType.title}
                 attributeTitle={selectType.title}
                 options={selectType.options}
+                className="md:tw-mt-8 tw-mt-4 "
               />
             ))}
             <InputMessage />

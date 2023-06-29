@@ -1,0 +1,10 @@
+.select:hover {
+  border-bottom: none !important;
+}
+.select::before {
+  border-bottom: 1px solid var(--colorBorder) !important;
+}
+
+.select:after {
+  border-bottom: none !important;
+}

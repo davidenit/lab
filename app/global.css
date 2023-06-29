@@ -203,13 +203,6 @@ p {
   letter-spacing: 2%;
 }
 
-.text-small {
-  font-size: 0.625rem;
-  font-weight: 390;
-  line-height: 12px;
-  letter-spacing: 2%;
-}
-
 @media screen and (max-width: 480px) {
   .heading1 {
     font-size: 1.75rem;

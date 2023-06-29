@@ -13,13 +13,15 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 
 interface ProductOptionsProps {
-  attributeTitle: string;
+  attributeTitle?: string;
   options: string[];
+  className?: string;
 }
 
 const ProductOptions: FC<ProductOptionsProps> = ({
   attributeTitle,
   options,
+  className,
 }) => {
   const [option, setOption] = useState<string>(options[0]);
   const handleChange = (event: SelectChangeEvent) => {
@@ -27,8 +29,8 @@ const ProductOptions: FC<ProductOptionsProps> = ({
   };
 
   return (
-    <Box sx={{ minWidth: 120 }} className="md:tw-mt-8 tw-mt-4">
-      <AttributeTitle filterType={attributeTitle} />
+    <Box sx={{ minWidth: 120 }} className={clsx('', className)}>
+      {attributeTitle && <AttributeTitle filterType={attributeTitle} />}
       <FormControl className="tw-w-full">
         <Select
           value={option}
@@ -36,7 +38,7 @@ const ProductOptions: FC<ProductOptionsProps> = ({
           displayEmpty
           inputProps={{ 'aria-label': 'Without label' }}
           className={clsx(
-            'tw-w-full tw-mt-6 tw-capitalize tw-pr-8 tw-pl-4 notification tw-text-text',
+            'tw-w-full tw-capitalize tw-pr-8 tw-pl-4 notification tw-text-text',
             styles.select
           )}
           IconComponent={ChevronRegularDownIcon}

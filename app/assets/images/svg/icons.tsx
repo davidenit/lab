@@ -547,7 +547,7 @@ export const PlusIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
       height="1em"
       viewBox="0 0 28 28"
       fill="none"
-      stroke="#191817"
+      // stroke="#191817"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -935,6 +935,23 @@ export const ShopingBagIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
         d="M16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11M5 9H19L20 21H4L5 9Z"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const ClockIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.0013 16.666C13.6846 16.666 16.668 13.6827 16.668 9.99935C16.668 6.31602 13.6846 3.33268 10.0013 3.33268C6.31797 3.33268 3.33464 6.31602 3.33464 9.99935C3.33464 13.6827 6.31797 16.666 10.0013 16.666ZM10.0013 1.66602C14.5846 1.66602 18.3346 5.41602 18.3346 9.99935C18.3346 14.5827 14.5846 18.3327 10.0013 18.3327C5.39297 18.3327 1.66797 14.5827 1.66797 9.99935C1.66797 5.41602 5.41797 1.66602 10.0013 1.66602ZM10.418 10.8327H9.16797V5.83268H10.418V9.38268L13.5013 7.60768L14.1263 8.69102L10.418 10.8327Z"
+        fill="#375EAB"
       />
     </svg>
   );
