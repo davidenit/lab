@@ -1,0 +1,44 @@
+/* Shipping Method */
+.circleBorder {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid var(--colorTextPlaceholder);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.circleHandle {
+  background-color: var(--colorPrimary);
+  border: none;
+  position: relative;
+  transition: 0.7s linear;
+}
+
+.circleHandle::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.checkedTotal {
+  border: 1.5px solid var(--colorPrimary);
+  border-radius: 4px;
+  transition: 0.7s linear;
+}
+
+.borderColor {
+  border-bottom: 1px solid var(--colorBorder);
+}
+
+.addressCheckbox {
+  display: none;
+}

@@ -1,0 +1,165 @@
+.underlineNavbar {
+  position: relative;
+  padding: 0 0.125rem;
+  width: fit-content;
+}
+
+.underlineNavbar::after {
+  position: absolute;
+  content: '';
+  width: -webkit-fill-available;
+  height: 0.125rem;
+  background-color: var(--colorError);
+  top: 2.5rem;
+  right: 0rem;
+  display: none;
+}
+
+.hoverUnderline:hover .underlineNavbar::after {
+  display: block;
+}
+
+.logo {
+  background: url('../../app/assets/images/png/BengawanLogoWhite.png') center
+    no-repeat;
+  background-size: contain;
+}
+
+.logoRed {
+  background: url('../../app/assets/images/png/BengawanLogo\ .png') center
+    no-repeat;
+  background-size: contain;
+}
+
+.home {
+  background: url('../../app/assets/images/png/BGS-PAN-WEB-BAN-FA\ 1.png')
+    center no-repeat;
+  height: 35.5rem;
+  background-size: cover;
+}
+
+.placeholder::placeholder {
+  color: var(--colorText);
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+.ImageHoverNavbar {
+  width: 41.75rem;
+  height: 8.6875rem;
+}
+
+.hoverChildNav {
+  position: relative;
+  width: fit-content;
+}
+
+.hoverChildNav::after {
+  position: absolute;
+  content: '';
+  width: 0.0625rem;
+  height: 137%;
+  background-color: var(--colorBorder);
+  top: 0px;
+  right: 0px;
+}
+
+.responParents {
+  border-top: 1px solid var(--colorText);
+  display: none;
+}
+
+.responRight {
+  display: none;
+}
+
+.hoverLitoShowResponRight:hover .responRight {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .liParents:hover .responParents {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hoverUnderline:hover .underlineNavbar::after {
+    display: none;
+  }
+
+  .responParents {
+    display: none;
+  }
+
+  .nav {
+    position: fixed;
+    top: 6.25rem;
+    height: -webkit-fill-available;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+    overflow: auto;
+  }
+
+  .nav .ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-left: 1.5rem;
+    margin-block: 0px;
+  }
+
+  .underlineNavbar:hover::after {
+    display: none;
+  }
+
+  .nav .ul .liParents {
+    font-size: 1.125rem;
+    margin-right: 1.5rem;
+  }
+  .nav .ul li .underlineMobile {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colorText);
+    width: 100%;
+  }
+
+  .logo {
+    background: url('../../app/assets/images/png/BengawanLogo\ .png') center
+      no-repeat;
+    background-size: contain;
+  }
+
+  .logoMobile {
+    background: url('../../app/assets/images/png/BengawanLogo\ .png') center
+      no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 9.3125rem;
+    height: 2.5rem;
+    margin-left: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .hoverChildNav::after {
+    height: 188%;
+  }
+
+  .ImageHoverNavbar {
+    width: 364px;
+  }
+
+  .responRight {
+    right: -215%;
+  }
+
+  .responParents {
+    right: -7.25rem;
+  }
+
+  .linkNavbar {
+    margin-bottom: 6.875rem;
+  }
+}
