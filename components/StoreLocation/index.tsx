@@ -10,6 +10,7 @@ import StoreFilterAccordion from '../StoreFilterAccordion';
 import { stores } from '../../app/api/mockData';
 import GoogleMapStore from '../GoogleMapStore';
 export interface StoreInfor {
+  id: string;
   name: string;
   address: string;
   zip: string;
@@ -35,7 +36,7 @@ const StoreLocation: FC<StoreLocationProps> = ({ handleClose }) => {
     <Container
       maxWidth="lg"
       className={clsx(
-        'tw-bg-white tw-w-[70vw] tw-h-[80vh] tw-rounded-md tw-p-6 !tw-pr-0 tw-box-border tw-relative !tw-flex tw-gap-8',
+        'tw-bg-white tw-w-[70vw] tw-h-[90vh] tw-rounded-md tw-p-6 !tw-pr-0 tw-box-border tw-relative !tw-flex tw-gap-8',
         styles.container
       )}
     >
@@ -73,7 +74,7 @@ const StoreLocation: FC<StoreLocationProps> = ({ handleClose }) => {
           handlePickStore={handlePickStore}
         />
       </div>
-      <GoogleMapStore pickedStore={pickedStore} />
+      <GoogleMapStore pickedStore={pickedStore} stores={stores} />
     </Container>
   );
 };

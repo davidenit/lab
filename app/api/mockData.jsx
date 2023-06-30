@@ -72,6 +72,7 @@ export const productInfor = {
 
 export const stores = [
   {
+    id: '1',
     name: 'Causeway Point',
     address: '1 Woodlands Square',
     zip: '012345',
@@ -83,6 +84,7 @@ export const stores = [
     lng: 103.785978,
   },
   {
+    id: '2',
     name: 'Sunplaza',
     address: '30 Sembawang Drive',
     zip: '012345',
@@ -94,6 +96,7 @@ export const stores = [
     lng: 103.817512,
   },
   {
+    id: '3',
     name: 'White Sands',
     address: 'Pasir Ris Central St 3',
     zip: '012345',
@@ -105,6 +108,7 @@ export const stores = [
     lng: 103.949368,
   },
   {
+    id: '4',
     name: 'Northpoint',
     address: '930 Yishun Ave 2',
     zip: '012345',
