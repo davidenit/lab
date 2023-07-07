@@ -12,7 +12,7 @@ import Image from 'next/image';
 import Product from '@/app/assets/images/svg/Product.png';
 import clsx from 'clsx';
 import ProductDetailModal from '@/components/ProductDetailModal';
-
+import styles from './styles.module.css';
 interface productContainerProps {
   productId?: string;
 }
@@ -90,8 +90,12 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
         classNameDiscount="text-small"
       />
       <Button
+        disabled={true}
         variant="contained"
-        className="tw-flex tw-box-border tw-group !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] notification !tw-font-450 tw-rounded tw-self-center "
+        className={clsx(
+          'tw-flex  tw-box-border tw-group !tw-py-[2.5px] tw-justify-center !tw-mt-[14.5px] !tw-mb-[10px] notification !tw-font-450 tw-rounded tw-self-center',
+          styles.button
+        )}
         sx={{
           width: 'calc(100% - 16px)',
           outline: '2px solid var(--colorPrimary)',
@@ -99,6 +103,10 @@ const ProductContainer: FC<productContainerProps> = ({ productId }) => {
             backgroundColor: 'var(--colorWhite)',
             color: 'var(--colorPrimary)',
             boxShadow: 'none',
+          },
+          '&:disabled': {
+            // backgroundColor: 'yellow',
+            outline: 'none',
           },
         }}
       >

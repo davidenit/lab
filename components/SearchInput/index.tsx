@@ -3,18 +3,19 @@ import { FormControl, InputAdornment, TextField } from '@mui/material';
 import { SearchIcon } from '@/app/assets/images/svg/icons';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-interface SearchInputProps {}
+interface SearchInputProps {
+  handleSearch: (value: string) => void;
+}
 
-const SearchInput: FC<SearchInputProps> = ({}) => {
-  const [searchValue, setSearchvalue] = useState<string>('');
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setSearchvalue(e.target.value);
+const SearchInput: FC<SearchInputProps> = ({ handleSearch }) => {
   return (
     <FormControl className={clsx(styles.inputContainer, 'tw-w-full ')}>
       <TextField
         size="small"
         variant="outlined"
-        onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          handleSearch(e.target.value)
+        }
         placeholder="Search location"
         InputProps={{
           endAdornment: (

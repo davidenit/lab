@@ -50,9 +50,9 @@ export default function Home() {
         </Box> */}
         {/* <BasicDatePicker /> */}
         <CustomizedSteppers />
-        {/* <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} />  */}
+        {/* <YouTube videoId="63jACiwo61c" opts={opts} onReady={onPlayerReady} /> */}
         {/* <CustomeNumberInput /> */}
-        <PriceSlider />
+        {/* <PriceSlider /> */}
         <ProductContainer />
       </Grid>
       <Footer />

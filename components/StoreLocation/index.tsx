@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, ChangeEvent } from 'react';
 import { Button, Container, GlobalStyles } from '@mui/material';
 import { CloseIcon } from '@/app/assets/images/svg/icons';
 import clsx from 'clsx';
@@ -25,13 +25,26 @@ interface StoreLocationProps {
 }
 
 const StoreLocation: FC<StoreLocationProps> = ({ handleClose }) => {
-  const options = ['10km', '20km', '30km'];
-  const addresses: string[] = stores.map((store) => store.address);
-  const addressOption = addresses.unshift('Everywhere');
-
+  const [searchValue, setSearchvalue] = useState<string>('');
   const [pickedStore, setPickedStore] = useState<StoreInfor>(stores[0]);
-  console.log('🚀 ~ file: index.tsx:30 ~ pickedStore:', pickedStore);
+  const options = ['10km', '20km', '30km'];
+  const handleSearchStore = (stores: StoreInfor[]) => {
+    return stores.filter(
+      (store) =>
+        store.address.toLowerCase().includes(searchValue.toLowerCase()) ||
+        store.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  };
+
+  const storeAfterSearch = handleSearchStore(stores);
+  const addresses: string[] = storeAfterSearch.map((store) => store.address);
+  const addressOption = addresses.unshift('Everywhere');
   const handlePickStore = (store: StoreInfor) => setPickedStore(store);
+
+  const handleSearch = (value: string) => {
+    setSearchvalue(value);
+  };
+
   return (
     <Container
       maxWidth="lg"
@@ -47,7 +60,7 @@ const StoreLocation: FC<StoreLocationProps> = ({ handleClose }) => {
       />
       <div className="tw-w-[40%] tw-flex tw-flex-col tw-gap-4">
         <h2 className="heading3">Store Location</h2>
-        <SearchInput />
+        <SearchInput handleSearch={handleSearch} />
         <div className="tw-flex tw-items-center tw-flex-col">
           <p className="body2">Search Radius</p>
           <OutlinedSelect options={options} />
@@ -70,7 +83,7 @@ const StoreLocation: FC<StoreLocationProps> = ({ handleClose }) => {
           locate nearby
         </Button>
         <StoreFilterAccordion
-          storeInfor={stores}
+          storeInfor={storeAfterSearch}
           handlePickStore={handlePickStore}
         />
       </div>
