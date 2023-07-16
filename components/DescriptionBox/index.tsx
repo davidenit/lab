@@ -1,6 +1,6 @@
 'use client';
 import { FC, useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, GlobalStyles } from '@mui/material';
 import clsx from 'clsx';
 import DescriptionAccordion from '../DescriptionAccordion';
 import ShippingAccordion from '../ShippingAccordion';
@@ -32,6 +32,19 @@ const DescriptionBox: FC<DescriptionBoxProps> = ({
       }}
       className={clsx('tw-mt-10 tw-w-full')}
     >
+      <GlobalStyles
+        styles={{
+          '.Mui-expanded': {
+            margin: '0!important',
+            minHeight: 'auto',
+            height: 'fit',
+            // padding: '8px 0',
+          },
+          '.MuiAccordionSummary-root': {
+            height: 'auto',
+          },
+        }}
+      />
       <DescriptionAccordion
         expanded={expanded}
         handleChange={handleChange}

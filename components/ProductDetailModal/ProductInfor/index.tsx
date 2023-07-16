@@ -5,6 +5,7 @@ import PromotiontTag from '@/components/PromotionTag';
 import Tags from '@/components/Tags';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import DiscriptionBox from '../../DescriptionBox/index';
 interface ProductInforProps {
   productInfor: Infor;
 }

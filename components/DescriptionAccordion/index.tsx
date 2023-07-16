@@ -33,12 +33,13 @@ const DescriptionAccordion: FC<DescriptionAccordionProps> = ({
         id="panel1bh-header"
         sx={{
           borderBottom: '1px solid var(--colorBorder)',
+          padding: '0 24px!important',
           '&.Mui-expanded': {
             minHeight: '0px!important',
             margin: '0!important',
           },
         }}
-        className="!tw-bg-lightGrey tw-text-text body2"
+        className="!tw-bg-lightGrey tw-text-text body2 !tw-px-6"
       >
         Description
       </AccordionSummary>

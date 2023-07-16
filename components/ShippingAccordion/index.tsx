@@ -40,8 +40,12 @@ const ShippingAccordion: FC<ShippingAccordionProps> = ({
             minHeight: '0px!important',
             margin: '0',
           },
+          '& .MuiAccordionSummary-content': {
+            margin: '0!important',
+            height: 'fit-content',
+          },
         }}
-        className="!tw-bg-lightGrey tw-text-text body2"
+        className="!tw-bg-lightGrey tw-text-text body2 !tw-px-6 !tw-m-0"
       >
         {nameAccordion}
       </AccordionSummary>

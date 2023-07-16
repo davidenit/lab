@@ -5,8 +5,8 @@ import Product from '@/app/assets/images/svg/Product.png';
 import clsx from 'clsx';
 import { WishlistHeartIcon } from '@/app/assets/images/svg/icons';
 import DescriptionBox from '../../DescriptionBox';
-import { useWindowSize } from 'react-use';
-
+// import { useWindowSize } from 'react-use';
+import SwiperProduct from '@/components/SwiperProduct/SwiperProduct';
 export interface Description {
   question: string;
   answer: string;
@@ -33,11 +33,11 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({
   delivery,
   storePickUp,
 }) => {
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
   return (
-    <Box className="lg:tw-w-[400px] md:tw-w-[300px] tw-w-full tw-border-box md:tw-pr-0">
-      <Box className="tw-overflow-hidden tw-relative tw-m-0 lg:tw-w-[400px] md:tw-w-[300px]">
-        <Image src={Product} alt="Product" className="tw-h-full tw-w-full" />
+    <Box className="lg:tw-w-[448px] md:tw-w-[300px] tw-w-full tw-border-box md:tw-pr-0">
+      <Box className="tw-overflow-hidden tw-relative tw-m-0 lg:tw-w-[448px] md:tw-w-[300px]">
+        <SwiperProduct />
         <Box className="tw-absolute tw-group tw-top-5 tw-right-5 tw-cursor-pointer tw-w-[30px] tw-h-[30px]">
           <WishlistHeartIcon
             className={clsx(
@@ -61,13 +61,18 @@ const ViewDetailProduct: FC<ViewDetailProductProps> = ({
       >
         View detail
       </Button>
-      {width > 480 && (
+      {/* {width > 480 && (
         <DescriptionBox
           description={description}
           delivery={delivery}
           storePickUp={storePickUp}
         />
-      )}
+      )} */}
+      <DescriptionBox
+        description={description}
+        delivery={delivery}
+        storePickUp={storePickUp}
+      />
     </Box>
   );
 };

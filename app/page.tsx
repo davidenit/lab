@@ -11,6 +11,7 @@ import { CustomizedSteppers } from './components/ui/CustomeStepper';
 import YouTube, { YouTubeProps } from 'react-youtube';
 import CustomeNumberInput from './components/ui/CustomeNumberInput';
 import Footer from './components/ui/Footer';
+import SwiperProduct from '../components/SwiperProduct/SwiperProduct';
 
 export default function Home() {
   return (
@@ -42,6 +43,9 @@ export default function Home() {
         {/* <CustomeNumberInput /> */}
         <PriceSlider />
         <ProductContainer />
+        <Box className="tw-w-[700px] tw-h-[710px]">
+          <SwiperProduct />
+        </Box>
       </Grid>
       <Footer />
     </>
