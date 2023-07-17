@@ -13,7 +13,6 @@ export const SearchIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
     >
       <path
         d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-        stroke="#191817"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -934,6 +933,36 @@ export const ShopingBagIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+};
+
+export const EditCartIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="white"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M2 0C0.89 0 0 0.89 0 2V16C0 16.5304 0.210714 17.0391 0.585786 17.4142C0.960859 17.7893 1.46957 18 2 18H16C16.5304 18 17.0391 17.7893 17.4142 17.4142C17.7893 17.0391 18 16.5304 18 16V9H16V16H2V2H9V0H2ZM14.78 1C14.61 1 14.43 1.07 14.3 1.2L13.08 2.41L15.58 4.91L16.8 3.7C17.06 3.44 17.06 3 16.8 2.75L15.25 1.2C15.12 1.07 14.95 1 14.78 1ZM12.37 3.12L5 10.5V13H7.5L14.87 5.62L12.37 3.12Z" />
+    </svg>
+  );
+};
+
+export const BinIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      width="14"
+      height="18"
+      viewBox="0 0 14 18"
+      fill="white"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M1 16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H11C11.5304 18 12.0391 17.7893 12.4142 17.4142C12.7893 17.0391 13 16.5304 13 16V4H1V16ZM3 6H11V16H3V6ZM10.5 1L9.5 0H4.5L3.5 1H0V3H14V1H10.5Z" />
     </svg>
   );
 };

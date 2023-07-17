@@ -39,6 +39,8 @@ const InputNumber: React.FC<InputNumber> = ({ value, setValue }) => {
       sx={{
         borderRadius: '4px',
         border: '1px solid #F5F4F3',
+        height: '100%',
+        width: '100%',
       }}
       classes={{
         root: styled.inputNumber,

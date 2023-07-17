@@ -11,6 +11,7 @@ import {
 import { Button } from '@mui/material';
 import Image from 'next/image';
 import ImgaeHoverNavbar from '../../app/assets/images/png/Rectangle.png';
+import MiniCart from '../MiniCart';
 
 const dataNavbar = [
   {
@@ -378,15 +379,9 @@ function Navbar() {
                   }`}
                   onClick={handleSearch}
                 />
-                <CartIcon
-                  fontSize={24}
-                  className={`md:tw-mr-6 tw-mr-1 ${
-                    showBackground
-                      ? 'md:tw-fill-[--colorText]'
-                      : 'md:tw-fill-[white]'
-                  } tw-fill-[black] hover:tw-fill-primary md:tw-block tw-transition-all tw-duration-300 tw-ease-linear ${
-                    isHandleOpenNavbar && 'tw-hidden'
-                  }`}
+                <MiniCart
+                  isHandleOpenNavbar={isHandleOpenNavbar}
+                  showBackground={showBackground}
                 />
                 <UserMediumIcon
                   fontSize={24}
